@@ -21,4 +21,4 @@ Cheeky Pint 訪談〈Why Sam Altman is against a single superintelligence〉（2
 OpenAI：Coordinated disclosure of critical vulnerabilities（2026-10-21）、Expanding Daybreak（2026-08-10）、Navier–Stokes solution（2026-09-08）、Sharing AI progress in mathematics（2026-10-06）、Introducing dots（2026-09-29）；PHP Foundation 與 php.net 2026-10-21 公告；Clay Mathematics Institute 聲明（2026-09-11）、Quanta、Nature、Retraction Watch、King's College London 新聞稿、arXiv:2610.08144、Association for Human Mathematics 聲明（經 Terence Tao 部落格轉載）。完整清單見主文〈來源清單〉。
 
 ## 狀態
-**僅本機完成**，未發布、未初始化獨立 Git、未推送。
+**已發布**（2026-10-30）：導讀 https://lushinshang.github.io/sam-altman-single-superintelligence/；全文譯文 https://lushinshang.github.io/sam-altman-single-superintelligence/translation-zh.html；雙語播放器 https://lushinshang.github.io/sam-altman-single-superintelligence/player.html 。GitHub：https://github.com/lushinshang/sam-altman-single-superintelligence 。

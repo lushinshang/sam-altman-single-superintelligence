@@ -5,3 +5,5 @@ Sam Altman 在 Cheeky Pint 說，他寧可有一兆個略超人的 AI，也不�
 另附全文繁中譯文與中英雙語同步字幕播放器。
 
 本導讀的分析與撰稿由 AI 模型完成，不是人類分析，也沒有經過人工逐句校稿；字幕依據 YouTube 英文字幕翻譯，非官方版本。
+
+完整導讀：https://lushinshang.github.io/sam-altman-single-superintelligence/
