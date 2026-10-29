@@ -166,11 +166,7 @@ footer{max-width:720px;margin:64px auto 0;padding-top:16px;border-top:1px solid 
 <p>奧特曼沒有直接附和。他先說：「首先，我認為我們可以做得比現在好得多」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=576s" target="_blank" rel="noopener noreferrer">09:36</a>），眼下最該專注的就是更好的安全模型。他懷疑的是沙箱對遠超人類的模型還管不管用：「如果你想像一個理論上的 AI，比最聰明的資安研究人員還要聰明上一百萬倍——你真的會願意信任那個沙箱嗎？」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=586s" target="_blank" rel="noopener noreferrer">09:46</a>）</p>
 <p>柯里森插話說可以用模型蓋沙箱，奧特曼說等一下再談，先排出三道防線：「我認為沙箱隔離在一定程度上是管用的」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=608s" target="_blank" rel="noopener noreferrer">10:08</a>），「然後我認為監控可以發揮更進一步的作用」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=611s" target="_blank" rel="noopener noreferrer">10:11</a>）。監控指看模型的思維鏈，加上啟動值監控（activation monitoring），直接看模型內部的運算狀態，確認它沒有在騙人。再往後，「最終，我認為你必須抱持極大的信心，相信模型真正做到了對齊」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=624s" target="_blank" rel="noopener noreferrer">10:24</a>），對齊到會忠實遵循操作者的意圖，並且永遠重視由人類掌控未來。</p>
 <p>回到柯里森的提議，他說如果有一個你百分之百確定對齊的模型，「那麼是的，我認為你可以讓它協助你打造越來越好的沙箱」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=652s" target="_blank" rel="noopener noreferrer">10:52</a>）。最後他說：「因為你必須非常、非常信任其對齊，才能相信沙箱能一直領先其能力」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=672s" target="_blank" rel="noopener noreferrer">11:12</a>）。</p>
-<figure class="diagram"><div class="mermaid-scroll" tabindex="0" role="group" aria-label="流程圖（可左右捲動）"><pre class="mermaid">flowchart TD
-    A[&quot;沙箱隔離&quot;] --&gt;|撐不住時交給| B[&quot;監控：思維鏈與啟動值&quot;]
-    B --&gt;|最後靠| C[&quot;相信模型真的對齊&quot;]
-    C -.-&gt;|完全信任對齊之後| D[&quot;讓模型幫忙蓋更好的沙箱&quot;]
-    D -.-&gt; A</pre></div><figcaption>圖說：本文歸納，非講者原圖。實線是他排出的三道防線；虛線是要先完全信任對齊才走得通的那條回路。</figcaption></figure>
+<figure class="section-figure"><picture><source media="(max-width: 640px)" srcset="images/fig-defense-zh-mobile.svg"><img src="images/fig-defense-zh.svg" alt="三道防線流程圖：沙箱隔離撐不住時交給監控，監控最後靠模型真的對齊；若完全信任對齊，才能讓模型幫忙蓋更好的沙箱，回到沙箱隔離" width="870" height="409" loading="lazy" style="--ar-d:870/409;--ar-m:420/652" tabindex="0" role="button" aria-label="放大圖片：三道防線流程圖：沙箱隔離撐不住時交給監控，監控最後靠模型真的對齊；若完全信任對齊，才能讓模型幫忙蓋更好的沙箱，回到沙箱隔離"></picture><figcaption>圖說：本文歸納，非講者原圖。實線是他排出的三道防線；虛線是要先完全信任對齊才走得通的那條回路；時間是訪談中的位置。</figcaption></figure>
 <p>沙箱撐不住的地方交給監控；監控要判斷模型有沒有說謊，靠的是看它自己的思維鏈與內部狀態，<strong>模型越強，越難保證看到的是真的。</strong>用模型蓋沙箱這條路也一樣，得先完全信任它的對齊。</p>
 <aside class="note"><p>重點：三道防線裡，前兩道的保證最後都借自第三道，而第三道要怎麼驗證到「極大的信心」，訪談裡沒有說。</p></aside>
 <p>奧特曼對比人類聰明一百萬倍的東西直接說「我不知道」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=664s" target="_blank" rel="noopener noreferrer">11:04</a>），<strong>沒有假裝有解。</strong>下一節「很多個 AI」的論點，就從這裡出發。</p>
@@ -185,9 +181,11 @@ footer{max-width:720px;margin:64px auto 0;padding-top:16px;border-top:1px solid 
 <p><strong>AI 的數量多，不代表握有權力的人多。</strong>一兆個 AI 是實例的數量，誰擁有、誰部署、跑在誰的雲端是另一回事。同一場訪談裡，奧特曼說，從全球配置的角度看，讓每個人在自己電腦裡放一堆 DRAM 是很糟的配置，「如果你試圖應對這種供應極度受限的環境，你會希望在雲端達到最高的利用率」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1776s" target="_blank" rel="noopener noreferrer">29:36</a>）；OpenAI 也在做自己的晶片與資料中心。這段談的是記憶體吃緊時的硬體配置，跟 AI 實例原本是兩回事，但兩段放在一起看，實例多元與控制集中可以並存。</p>
 <p><strong>限制單一模型，風險可能只是換了位置。</strong>如果代理團隊真的有「非常有趣的擴展定律特性」，又能平行一萬次，整個團隊加起來的有效能力，可能超過被限制的那個單一模型。團隊整體要不要也有上限，訪談沒有碰。</p>
 <p><strong>攻防均衡需要攻守兩方能力大致相當、出錯了還能修。</strong>奧特曼在第一節轉述資安專家的話，說大家已經不確定威脅模型的假設是否成立，這正好削弱了均衡的前提。</p>
+<figure class="section-figure"><picture><source media="(max-width: 640px)" srcset="images/fig-gap-zh-mobile.svg"><img src="images/fig-gap-zh.svg" alt="示意圖：左邊是奧特曼的類比，社會靠很多人互相制衡才維持強健；右邊是他的直覺偏好，寧要一兆個略超人的 AI；中間三塊是訪談沒有處理的條件：獨立性、所有權、團隊上限" width="870" height="410" loading="lazy" style="--ar-d:870/410;--ar-m:420/614" tabindex="0" role="button" aria-label="放大圖片：示意圖：左邊是奧特曼的類比，社會靠很多人互相制衡才維持強健；右邊是他的直覺偏好，寧要一兆個略超人的 AI；中間三塊是訪談沒有處理的條件：獨立性、所有權、團隊上限"></picture><figcaption>圖說：本文分析，非講者原圖。左右兩端是奧特曼的話，中間三塊是訪談沒有處理的條件。</figcaption></figure>
 <aside class="note"><p>重點：從「社會靠制衡維持強健」走到「很多個 AI 比較安全」，中間至少要補上獨立性、所有權、團隊上限這幾塊，訪談裡都還是空的。</p></aside>
 <h2 id="sec-7">四、設上限，也放手失控一週</h2>
 <p>談資安時他先自我批評：「我認為我們並沒有向人們好好解釋清楚，為什麼我們覺得這項技術所有潛在的負面影響都是值得承擔的」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=333s" target="_blank" rel="noopener noreferrer">05:33</a>）。他形容大眾聽到的版本是：AI 也許能治癌症，但自己會丟掉工作、失去對未來的掌控，還得有一個監控國家才不會全滅，評語是「這是一套糟糕的行銷說詞」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=384s" target="_blank" rel="noopener noreferrer">06:24</a>）。他的解方是迭代式部署：「即使推動迭代式部署在 AI 安全社群中極不受歡迎」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=388s" target="_blank" rel="noopener noreferrer">06:28</a>），OpenAI 仍堅守把工具交到大眾手中的原則，因為不該是「讓一群坐在舊金山幾平方英里土地上的人替未來做出所有決定」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=418s" target="_blank" rel="noopener noreferrer">06:58</a>）。</p>
+<figure class="section-figure"><picture><source media="(max-width: 640px)" srcset="images/fig-timeline-zh-mobile.svg"><img src="images/fig-timeline-zh.svg" alt="時間軸：放手探索出現在 06:28 迭代式部署與 14:42 到 17:12 放手燒算力；設限與防線出現在 09:46 到 11:12 沙箱、監控、對齊與 32:42 單一模型要設上限；標題立場在 24:13" width="870" height="472" loading="lazy" style="--ar-d:870/472;--ar-m:420/1060" tabindex="0" role="button" aria-label="放大圖片：時間軸：放手探索出現在 06:28 迭代式部署與 14:42 到 17:12 放手燒算力；設限與防線出現在 09:46 到 11:12 沙箱、監控、對齊與 32:42 單一模型要設上限；標題立場在 24:13"></picture><figcaption>圖說：本文歸納，非講者原圖。時間是訪談中的位置；圓點是一句話，長條是一段討論。</figcaption></figure>
 <p>迭代式部署寫在 OpenAI 的官方安全原則裡，2023 年的〈Planning for AGI and beyond〉也有同義表述；「極不受歡迎」是奧特曼自己的評價。柯里森把它概括成「把進展放出去，不能悶在政府裡」，奧特曼修正說也不是全部，「在把它們放出去之前，你依然必須確保它們是安全的」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=436s" target="_blank" rel="noopener noreferrer">07:16</a>），但「累積能力懸置（capability overhang）是應該對抗的事」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=440s" target="_blank" rel="noopener noreferrer">07:20</a>）。能力懸置指能力做出來卻壓著不放，一次放出時社會來不及調適。</p>
 <p>談算力時，他的態度更明顯。他說最會用 AI 的人和一般人的落差「只是一直在擴大、擴大、再擴大」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=838s" target="_blank" rel="noopener noreferrer">13:58</a>）。柯里森問怎麼控制代理的花費，奧特曼說可以在提示詞裡寫，「如果你說用 10,000 美元的算力盡你所能做到最好」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=882s" target="_blank" rel="noopener noreferrer">14:42</a>），它會理解。<strong>這是請 agent 自己節制，跟帳單上設硬上限不同。</strong></p>
 <p>OpenAI 內部的規矩：「我們盡量從不因為員工消耗大量算力而獎勵他們」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=929s" target="_blank" rel="noopener noreferrer">15:29</a>），沒有 token 排行榜，「但預設態度是懷疑的」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=939s" target="_blank" rel="noopener noreferrer">15:39</a>），能證明做了重要的事就只會得到讚賞。柯里森追問：一千萬美元的數學還好，一億、十億呢？奧特曼在這裡說出那句「我們確實曾有一個禮拜在數學上放任它失控」，理由是「在你嘗試之前，你不知道它能走多遠」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=976s" target="_blank" rel="noopener noreferrer">16:16</a>）。<strong>他的原則是新典範出現時讓人相當不受拘束</strong>：「讓人們在可能性的極限邊緣探索」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1032s" target="_blank" rel="noopener noreferrer">17:12</a>），再相信最佳化的壓力會讓它變便宜。</p>
@@ -234,7 +232,7 @@ footer{max-width:720px;margin:64px auto 0;padding-top:16px;border-top:1px solid 
 <ul><li>企業的 AI 支出多半掛在 IT 或專案預算底下，內控要求事前核定。每位工程師的 token 額度一旦成真，誰核准超支會比模型選型更早卡住。</li><li>中小企業跟上最會用 AI 的人，卡住的常是資料沒整理、沒有人能觀察與除錯 agent。</li><li>晶片設計到投片是奧特曼點名適合 AI 的環節，矽產能有限是他說的共同利益。台灣的 IC 設計與晶圓代工會直接感受到這兩句話，但他沒有點名任何公司。</li><li>「一兆個 AI」如果多數跑在少數海外雲端，對台灣的企業與政府，實際的問題是供應商依賴與資料存放地。</li></ul>
 <p>一兆個略超人的 AI 和一個一兆 IQ 的 AI，哪個比較安全，訪談給的是一個直覺。要讓這個直覺變成可以檢驗的主張，第一個要回答的也許是：那一兆個 AI，最後聽誰的？</p>
 <h2 id="sec-12">製作說明：這篇導讀由 AI 模型完成</h2>
-<ul><li>分析與撰稿由 AI 模型完成，不是人類分析，也沒有經過人工逐句校稿。主控與字幕逐章修訂為 Claude Sonnet 5.5；字幕初譯由 Gemini 3.8 Flash（經 agy）完成；譯文統一審查、正文撰寫、獨立審稿由 Claude Opus 完成，最後再由 Opus 依總編輯準則潤稿兩輪，並標示重點與注意之處；重要說法的查證使用 Claude、OpenAI Codex 與 Gemini（經 agy）三路。封面插畫由 OpenAI Codex 的 image generation 製作，圖內沒有文字。</li><li>查證原則：重要說法須有兩方以上的查證，並對到官方或第一手來源；只有單方者降級標示。</li><li>引言依據 YouTube 的英文字幕翻成中文，經 AI 審校，是機器翻譯，不是官方譯文，也沒有逐句對照原音；說話者歸屬依節目官方逐字稿（Substack）逐輪核對。個別字句以影片與官方逐字稿為準。OpenAI 頁面引述採其繁體中文版。</li><li>本導讀另附<a href="translation-zh.html">全文繁中譯文</a>與<a href="player.html">雙語同步播放器</a>，都是機器翻譯，非官方版本；影片與逐字稿版權屬原節目。</li><li>本導讀的插圖只有封面一張，是 AI 生成的概念插畫；三道防線的流程圖是本文歸納。</li></ul>
+<ul><li>分析與撰稿由 AI 模型完成，不是人類分析，也沒有經過人工逐句校稿。主控與字幕逐章修訂為 Claude Sonnet 5.5；字幕初譯由 Gemini 3.8 Flash（經 agy）完成；譯文統一審查、正文撰寫、獨立審稿由 Claude Opus 完成，最後再由 Opus 依總編輯準則潤稿兩輪，並標示重點與注意之處；重要說法的查證使用 Claude、OpenAI Codex 與 Gemini（經 agy）三路。封面插畫由 OpenAI Codex 以 codex exec 呼叫 image generation 製作，圖內沒有文字；資訊圖由 AI 撰寫 SVG 腳本繪製。</li><li>查證原則：重要說法須有兩方以上的查證，並對到官方或第一手來源；只有單方者降級標示。</li><li>引言依據 YouTube 的英文字幕翻成中文，經 AI 審校，是機器翻譯，不是官方譯文，也沒有逐句對照原音；說話者歸屬依節目官方逐字稿（Substack）逐輪核對。個別字句以影片與官方逐字稿為準。OpenAI 頁面引述採其繁體中文版。</li><li>本導讀另附<a href="translation-zh.html">全文繁中譯文</a>與<a href="player.html">雙語同步播放器</a>，都是機器翻譯，非官方版本；影片與逐字稿版權屬原節目。</li><li>封面是 AI 生成的概念插畫；三張資訊圖（三道防線、論證缺口、放手與設限的時間軸）是 AI 撰寫腳本繪製的 SVG，內容是本文歸納與分析，不是講者原圖。</li></ul>
 <h2 id="sec-13">來源清單</h2>
 <p><strong>節目</strong></p>
 <ul class="sources"><li><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY" target="_blank" rel="noopener noreferrer">Why Sam Altman is against a single superintelligence</a>，Cheeky Pint（YouTube），2026-10-29。</li><li><a href="https://cheekypint.substack.com/p/why-sam-altman-is-against-a-single" target="_blank" rel="noopener noreferrer">Why Sam Altman is against a single superintelligence（官方逐字稿）</a>，Cheeky Pint（Substack），2026-10-29。</li></ul>
@@ -268,19 +266,6 @@ footer{max-width:720px;margin:64px auto 0;padding-top:16px;border-top:1px solid 
     if(e.key==='Escape'){close();}
     if(e.key==='Tab'){e.preventDefault();btn.focus();}
   });
-})();
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js" integrity="sha384-WmdflGW9aGfoBdHc4rRyWzYuAjEmDwMdGdiPNacbwfGKxBW/SO6guzuQ76qjnSlr" crossorigin="anonymous" onerror="void 0"></script>
-<script>
-(function(){
-  if(typeof mermaid==='undefined')return;
-  try{
-    var dark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;
-    mermaid.initialize({startOnLoad:false,securityLevel:'strict',theme:dark?'dark':'default',flowchart:{useMaxWidth:false,htmlLabels:true}});
-    var p=mermaid.run({querySelector:'pre.mermaid'});
-    if(p&&p.catch){p.catch(function(){});}
-  }catch(e){}
 })();
 </script>
 </body>
