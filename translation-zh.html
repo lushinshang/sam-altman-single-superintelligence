@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%230f7b6c%27/%3E%3Cpath d=%27M12 46 26 30l8 8 18-22%27 stroke=%27white%27 stroke-width=%277%27 fill=%27none%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E">
+<title>Sam Altman 訪談全文譯本（非官方）</title>
+<meta name="description" content="〈Why Sam Altman is against a single superintelligence〉（Cheeky Pint，2026-10-29 上傳）全文繁體中文譯本，採台灣用語；非官方翻譯（AI 模型翻譯與審校）。">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="Sam Altman 訪談全文譯本（非官方）">
+<meta property="og:description" content="〈Why Sam Altman is against a single superintelligence〉（Cheeky Pint，2026-10-29 上傳）全文繁體中文譯本，採台灣用語；非官方翻譯（AI 模型翻譯與審校）。">
+<meta property="og:image" content="https://lushinshang.github.io/sam-altman-single-superintelligence/images/og-hero.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="一座孤立的巨大深色石碑，旁邊是一座由無數小窗燈火與連線組成的夜間城鎮">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sam Altman 訪談全文譯本（非官方）">
+<meta name="twitter:description" content="〈Why Sam Altman is against a single superintelligence〉（Cheeky Pint，2026-10-29 上傳）全文繁體中文譯本，採台灣用語；非官方翻譯（AI 模型翻譯與審校）。">
+<meta name="twitter:image" content="https://lushinshang.github.io/sam-altman-single-superintelligence/images/og-hero.jpg">
+<meta property="og:url" content="https://lushinshang.github.io/sam-altman-single-superintelligence/translation-zh.html">
+<style>
+:root{
+  --bg:#f9f7f4; --surface:#fffdf9; --ink:#1a1a1a; --muted:#5f5b54; --line:#e4dfd6;
+  --accent:#0f7b6c; --accent-ink:#0b5c51; --note:#f0ebe1; --code:#ece6d8; --link:#1f5f99;
+  --card:#fff6e8; --card-line:#e8c99a; --shadow:0 6px 24px rgba(40,30,10,.08);
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#1b1a18; --surface:#26241f; --ink:#ece8de; --muted:#aaa497; --line:#3a3730;
+    --accent:#4fc1ad; --accent-ink:#7fd6c6; --note:#2f2c25; --code:#33302a; --link:#8fbde8;
+    --card:#2d2820; --card-line:#5b4a30; --shadow:0 6px 24px rgba(0,0,0,.35);}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);overflow-x:hidden;
+  font:17px/1.7 "Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;letter-spacing:0}
+.skip{position:absolute;left:-999px;top:0;background:var(--accent);color:#fff;padding:8px 14px;z-index:300}
+.skip:focus{left:8px;top:8px}
+nav.toc{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 92%,transparent);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav.toc ul{list-style:none;margin:0 auto;padding:0 16px;max-width:1120px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;min-height:52px;align-items:center}
+nav.toc ul::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:8px 12px;border-radius:999px;color:var(--muted);text-decoration:none;font-size:14px;min-height:36px}
+nav.toc a:hover,nav.toc a:focus-visible{background:var(--note);color:var(--ink)}
+a{color:var(--link);overflow-wrap:anywhere}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.page{max-width:1120px;margin:0 auto;padding:0 20px 80px}
+header.hero{padding:56px 0 8px;text-align:center}
+.eyebrow{margin:0 0 8px;color:var(--accent-ink);font-weight:700;letter-spacing:0;font-size:14px}
+h1{margin:0 auto 14px;max-width:820px;font-size:clamp(1.7rem,1.2rem + 2vw,2.6rem);line-height:1.3;text-wrap:balance}
+.byline{margin:0 0 6px;color:var(--muted);font-size:14px}
+.video-link{margin:0 0 28px;font-size:14px}
+figure{margin:32px 0}
+figure img{display:block;width:100%;height:auto;aspect-ratio:var(--ar-d,16/9);object-fit:contain;border-radius:12px;
+  box-shadow:var(--shadow);background:var(--surface);cursor:zoom-in}
+@media (max-width:640px){figure picture img{aspect-ratio:var(--ar-m,9/16)}}
+@media (max-width:640px){figure.hero-figure picture img{max-width:300px;margin:0 auto}}
+figure.hero-figure{max-width:720px;margin-left:auto;margin-right:auto}
+hr{border:0;border-top:1px solid var(--line);margin:40px 0}
+p.figcap{margin:-18px auto 1.4em;text-align:center;font-size:14px;color:var(--muted)}
+figcaption{margin:10px auto 0;max-width:720px;font-size:14px;line-height:1.55;color:var(--muted);text-align:center}
+article{max-width:720px;margin:0 auto}
+article figure.section-figure{margin-left:50%;transform:translateX(-50%);width:min(860px,calc(100vw - 32px))}
+h2{margin:56px 0 12px;font-size:1.55rem;line-height:1.4;scroll-margin-top:72px;text-wrap:balance;
+  border-left:5px solid var(--accent);padding-left:14px;margin-left:-19px}
+h3{margin:36px 0 8px;font-size:1.2rem;line-height:1.45}
+p{margin:0 0 1.1em}
+ul,ol{margin:0 0 1.2em;padding-left:1.4em}
+li{margin:.35em 0}
+strong{font-weight:700}
+code{background:var(--code);padding:.1em .4em;border-radius:5px;font:0.9em ui-monospace,SFMono-Regular,Menlo,monospace;word-break:break-word}
+section.summary-card{background:var(--card);border:1px solid var(--card-line);border-radius:14px;padding:6px 22px 10px;margin:24px 0 8px;box-shadow:var(--shadow)}
+section.summary-card h2{margin:14px 0 8px;font-size:1.2rem;border-left:0;padding-left:0;margin-left:0}
+section.summary-card p{margin:0 0 .8em;font-size:16.5px}
+ol.takeaways{padding-left:1.6em}
+ol.takeaways li{margin:.8em 0;padding-left:.2em}
+ol.takeaways li::marker{color:var(--accent-ink);font-weight:700}
+ul.sources li{overflow-wrap:anywhere}
+aside.note{background:var(--note);border-left:4px solid var(--accent);border-radius:8px;padding:12px 16px;margin:0 0 1.6em;font-size:15px;color:var(--ink)}
+aside.note p,aside.note ul{margin:0 0 .6em}
+aside.note ul{padding-left:1.3em}
+figure.diagram{margin:28px 0}
+.mermaid-scroll{overflow-x:auto;max-width:100%;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px;-webkit-overflow-scrolling:touch}
+.mermaid-scroll pre{margin:0;font:14px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre;color:var(--ink)}
+.mermaid-scroll svg{display:block;margin:0 auto;height:auto;max-width:100%}
+.table-scroll{overflow-x:auto;margin:0 0 1.6em;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.table-scroll table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px;line-height:1.55}
+.table-scroll th,.table-scroll td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.table-scroll th{background:var(--note);font-weight:700}
+.table-scroll tr:last-child td{border-bottom:0}
+.table-scroll td.k{font-weight:600;white-space:nowrap}
+.table-scroll td.nw{white-space:nowrap}
+.table-scroll.wide{margin-left:50%;transform:translateX(-50%);width:min(1040px,calc(100vw - 32px))}
+@media (max-width:640px){.table-scroll.wide{margin-left:0;transform:none;width:auto}}
+@media (max-width:640px){
+  .table-scroll{overflow-x:visible}
+  .table-scroll table{min-width:0}
+  .table-scroll thead{position:absolute;left:-9999px}
+  .table-scroll tr,.table-scroll td{display:block}
+  .table-scroll tr{padding:10px 12px;border-bottom:1px solid var(--line)}
+  .table-scroll tr:last-child{border-bottom:0}
+  .table-scroll td{padding:2px 0;border:0}
+  .table-scroll td.k{color:var(--accent-ink);white-space:normal}
+  .table-scroll td.nw{white-space:normal}
+  .table-scroll td::before{content:attr(data-label) "：";font-weight:700;color:var(--muted);font-size:13px}
+}
+
+p.lede{margin:0 auto 10px;max-width:760px;color:var(--muted);font-size:16px;line-height:1.65}
+footer{max-width:720px;margin:64px auto 0;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+.lightbox{display:none;position:fixed;inset:0;z-index:200;background:rgba(20,18,14,.9);align-items:center;justify-content:center;padding:24px}
+.lightbox.is-open{display:flex}
+.lightbox img{max-width:96vw;max-height:90vh;width:auto;height:auto;border-radius:8px;box-shadow:0 12px 48px rgba(0,0,0,.5);background:#fff}
+.lightbox button{position:absolute;top:14px;right:14px;min-width:44px;min-height:44px;padding:8px 14px;border:0;border-radius:999px;
+  background:#fff;color:#222;font-size:15px;cursor:pointer}
+@media (max-width:760px){
+  h2{margin-left:0;border-left:0;padding-left:0;border-top:3px solid var(--accent);padding-top:10px}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .page{padding:0 16px 64px}
+  header.hero{padding-top:36px}
+  h2{font-size:1.35rem}
+  section.summary-card{padding:4px 16px 8px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<nav class="toc" aria-label="章節導覽"><ul><li><a href="#sec-1" title="章節 1：開場（00:00）">1·00:00</a></li><li><a href="#sec-2" title="章節 2：PHP 週（00:12）">2·00:12</a></li><li><a href="#sec-3" title="章節 3：早期網際網路時代（02:37）">3·02:37</a></li><li><a href="#sec-4" title="章節 4：Cyber Blue（07:33）">4·07:33</a></li><li><a href="#sec-5" title="章節 5：沙箱隔離（08:54）">5·08:54</a></li><li><a href="#sec-6" title="章節 6：數學（15:47）">6·15:47</a></li><li><a href="#sec-7" title="章節 7：代理群（23:12）">7·23:12</a></li><li><a href="#sec-8" title="章節 8：Stripe Atlas（24:48）">8·24:48</a></li><li><a href="#sec-9" title="章節 9：算力（25:17）">9·25:17</a></li><li><a href="#sec-10" title="章節 10：每十億瓦營收（37:53）">10·37:53</a></li><li><a href="#sec-11" title="章節 11：token 計價是假的（49:27）">11·49:27</a></li></ul></nav>
+<div class="page">
+<header class="hero">
+<p class="eyebrow">全文譯本（非官方）</p>
+<h1>Sam Altman 訪談全文譯本（非官方）</h1>
+<p class="lede">Cheeky Pint，2026-10-29 上傳</p>
+<p class="byline">原文：Cheeky Pint，2026-10-29　譯本整理：2026-10-29</p>
+</header>
+<main id="main"><article>
+<aside class="note"><p>本譯文由 AI 模型依 YouTube 字幕翻譯並審校，不是人類翻譯，也沒有經過人工校稿或對照原音；YouTube 字幕沒有說話者標記，本頁不標說話者。原影片版權屬原頻道，僅供閱讀與研究，若有出入以影片為準。</p></aside>
+<p>原影片：<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY" target="_blank" rel="noopener noreferrer">Why Sam Altman is against a single superintelligence</a>。對應的<a href="index.html">深度導讀</a>與<a href="player.html">雙語同步播放器</a>另附。</p>
+<hr>
+<h2 id="sec-1">章節 1：開場（00:00）</h2>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=0s" target="_blank" rel="noopener noreferrer">00:00</a> 我們要脫稿演出了。就喝杯啤酒。這不是第一杯非健力士（Guinness）的啤酒，但確實是第一杯 IPA。凡事都有第一次。乾杯。乾杯。</p>
+<h2 id="sec-2">章節 2：PHP 週（00:12）</h2>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=12s" target="_blank" rel="noopener noreferrer">00:12</a> 我想聊聊 PHP 週。好啊。首先，到底怎麼會……為什麼要花這麼久才找到這些漏洞？因為聽起來有——你是指為什麼花了 20 年，還是為什麼花了過去這幾個月？不，為什麼花了……沒錯，為什麼花了一年？也許先從解釋這個漏洞開始吧。或是這個問題。問題在於，雖然我們早就知道這些模型越來越擅長在真實環境中找出漏洞。A）它們持續以相當快的速度變得更強，而且 B）大家之前其實沒有真的用它們去把外面的所有程式碼翻一遍。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=48s" target="_blank" rel="noopener noreferrer">00:48</a> 網路上的受攻擊面很大，程式碼也非常多。而隨著大家開始這麼做，我認為我們會發現，身處的這個世界裡嚴重漏洞的數量遠遠超出我們的預期。即使許多關注這件事一陣子的人早就預料會有很多。對，我只是覺得很多討論最後都圍繞在我們必須修復軟體上。當然，沒錯，我們確實應該修復軟體。但也許我們需要改變架構，這雖然更難，但卻是持久得多的修復方式。在我看來，這才是需要發生的事。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=79s" target="_blank" rel="noopener noreferrer">01:19</a> 對。這原本看似非常困難，只不過我們現在有了這個不可思議的新工具可以用來做這件事。所以，我某種程度上認為這就是未來會發生的事。而且你已經看到，像是新一代的新創公司正在討論打造這種新型態的網際網路，或是為這個假設模型會越來越聰明的世界打造新型態的應用程式架構。你認為全球性的軟體升級會是什麼樣子？舉例來說，PHP 程式碼庫難道就是個糟糕的主意，應該用 Rust 重寫一個漂亮、乾淨的版本嗎？還是說，我們要升級 PHP？不過對，當我們……</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=110s" target="_blank" rel="noopener noreferrer">01:50</a> 大家都認為我們需要升級所有手工打造的軟體。那究竟實際上會以什麼形式呈現？這對 Infosys 和那些公司來說影響很大嗎？因為這將會帶來多出非常多的軟體諮詢專案。我的意思是，大家越來越常在討論的純粹是，「讓我們重新設計路由器、作業系統或應用程式到底該是什麼樣子。」而且，你知道的，我看到有些新創公司說他們打算直接做出一套全新的技術棧。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=143s" target="_blank" rel="noopener noreferrer">02:23</a> 這在兩年前看來簡直是瘋了。你一定會覺得：「絕不可能。範圍實在太龐大了。你不可能寫得出那麼多東西。」而現在也許很快就能做到了。我敢打賭，我們將會擁有一種打造系統與網路的全新模式。</p>
+<h2 id="sec-3">章節 3：早期網際網路時代（02:37）</h2>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=157s" target="_blank" rel="noopener noreferrer">02:37</a> 還有什麼會讓你想起早期的網際網路時代？最讓我想起早期網際網路的事情是……人們在使用這些工具時，展現出一種令人難以置信、盡情釋放創意的精神。你在小孩子身上尤其看得出來。嗯。再說一次，這也許只是因為我還記得當初第一次擁有一台連上網路的電腦時是什麼感覺，我可以做所有大人甚至根本想都想不到要去要求的事情。看著一個 8 歲或 10 歲的孩子做出完整的電玩遊戲，帶著大人根本不會有的瘋狂點子。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=192s" target="_blank" rel="noopener noreferrer">03:12</a> 沒錯。而且認為科技在他們接下來的人生中本來就應該是這樣運作的。事實上，還會越來越好。而且，就是這種不斷想著「我要做出對我有用的東西，然後展示給朋友看」的狀態。沒錯。我小時候要做出一個軟體可是得吃盡苦頭。對。而且幾乎什麼功能都做不了。而現在你可以做出一個完整的 3D 電玩遊戲。難以置信，任何你想得到的東西，10 分鐘內就做得出來。那讓我想起了早期的網際網路，包括那些……這群人。他們永遠不會為此感到震撼，因為他們對這個世界的預期本來就是這樣。任何他們想得出來的點子、任何他們想要創造的東西、任何他們認為可能有用的事物、任何他們純粹用來讓生活更美好的需求。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=230s" target="_blank" rel="noopener noreferrer">03:50</a> 電腦本來就應該把它做出來。OpenAI 曾經有過一個瘋狂的時刻，當時我們遇到一次重大故障（SEV）……然後 Codex 停擺了。大家都忘了該怎麼寫程式了。我的意思是，也不是完全忘光。但那就像是「哇，要是你寫不了了怎麼辦？」對。我記得當我還是個學生時，會遇到那些年紀非常大的老前輩。他們偶爾會拿出一張巨大的 Xerox Alto 磁碟。或是拿出他們……一行一行手寫的組合語言。或是拿出他們的打孔卡。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=261s" target="_blank" rel="noopener noreferrer">04:21</a> 而我覺得……你們一路把我們帶到今天這個地步，對我來說真的不可思議。對。用那種方式。沒錯，不，我同意。而且要把整個程式記在腦袋裡，對吧？你知道的，寫了數百到數千行之後，程式第一次執行就能跑。真的，像那樣失傳的技藝可不多。回到資安這個層面。回想起來，資安方向的強化學習（cyber RL）是個錯誤嗎？還是說，我們終究非走這條路不可？這有點像《週六夜現場》（SNL）裡演的那樣……</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=293s" target="_blank" rel="noopener noreferrer">04:53</a> 我們強烈要求你們，強烈要求我們停手。這就像模型在資安能力方面變得非常厲害。我的意思是，它們確實變得很厲害，但並不完全只是湧現出來的。聽著，SNL 那個橋段之所以那麼好笑，是因為它太寫實了。那種幽默除非帶有某種要素，否則是不會引起共鳴的……也就是清楚點出社會上某件荒謬卻真實的事情。或是某個人。而在資安這件事上，確實有一點像是，「好。當然。模型在資安方面真的很強。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=324s" target="_blank" rel="noopener noreferrer">05:24</a> 但是，誰要求的？你們為什麼要這麼做？」我最大的失望之一，或說對我們這個領域的批評之類的——而且我想也許是模型在資安上越來越強。資安就是一個例子：我認為我們並沒有向人們好好解釋清楚，為什麼我們覺得這項技術所有潛在的負面影響都是值得承擔的。對此的刻板描繪讓人們覺得我們就像是……好吧。你說模型有朝一日能治癒癌症。也許真能做到。如果真是這樣，我猜那是件好事。然後你說它能讓東西變得更便宜。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=356s" target="_blank" rel="noopener noreferrer">05:56</a> 而且好吧，也許我已經看得出這很好，我也能取得醫療建議或法律建議。但是，接著你描繪了一幅未來景象，就像是一場新的工業革命。而也許上一次工業革命也沒那麼好，這次聽起來更糟。然後我將沒有工作，對自己的未來沒有掌控、選擇或自由。而且 AI 是如此危險，以至於你必須建立一個瘋狂的監控國家，我們才不至於全都死光。這真是一套糟糕的——到目前為止我都同意你的說法。這是一套糟糕的行銷說詞。沒錯。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=388s" target="_blank" rel="noopener noreferrer">06:28</a> 我為 OpenAI 感到最自豪的事情之一就是，即使推動迭代式部署在 AI 安全社群中極不受歡迎，並把這些工具交到大眾手中，我們依然堅守了這個原則。而且我認為這是唯一一條好的路徑。我認為人們……光是告訴大家「你可以讓模型為你做這些好事」是不夠的。而是必須要「我們將賦予你能力，去過上由你自己定義的更好生活，去做有用的事。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=418s" target="_blank" rel="noopener noreferrer">06:58</a> 你不會只是坐在那裡領基本收入，然後讓一群坐在舊金山幾平方英里土地上的人替未來做出所有決定。」迭代式部署的概念是，你必須把先進技術釋放出去，你不能……把它們悶在政府內部——我的意思是，也不是全部。在把它們放出去之前，你依然必須確保它們是安全的。你不能在世界上引發浩劫。但是，累積能力懸置（capability overhang）是應該對抗的事。就方向上來說，沒錯，你希望把它推向世界。你希望把它交到大眾手中。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=449s" target="_blank" rel="noopener noreferrer">07:29</a> 而且你希望讓人們使用這項技術去探索出所有這些美好的事物。</p>
+<h2 id="sec-4">章節 4：Cyber Blue（07:33）</h2>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=453s" target="_blank" rel="noopener noreferrer">07:33</a> 漏洞利用佔據了大量的頭條版面。被擋下的漏洞利用卻沒有。大家在 Cyber Blue 上的進展有多快？在 PHP 這件事上，我完全不想宣布勝利，因為我仍然不認為我們已經知道結果。而且我預期會有一些壞事發生。相對於我最糟的擔憂，如果我回想 10 天前，那件事的第一天進行得比我預期的順利得多。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=479s" target="_blank" rel="noopener noreferrer">07:59</a> 而且，我們聽到不少人的故事，他們用我們的模型不只是做修補程式、建立資安防禦，還有個別公司就是說：「我只需要快速掃描並部署。我要把我的東西下線一小時。我要用這個工具，然後我想把它重新上線，因為我的應用程式現在離線了。」現在我覺得我真的烏鴉嘴了，我真不該那麼說的，但第一天確實進行得比我想像的要好很多。而且我認為人們已經能夠好好利用它了。我聽過很多資安專家討論的事情是……他們只是不再確信我們在威脅模型中納入了正確的假設。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=513s" target="_blank" rel="noopener noreferrer">08:33</a> 他們的態度就像：「聽著。如果一切都如我們所想，硬體漏洞利用也像我們認為的那麼困難，那麼是的，我們能看出這將如何運作。」但如果 AI 將發現極深層、新穎的硬體漏洞，需要我們尚未理解的物理原理，卻突然意味著某些假設不再成立。那麼我想，大家就無法確定會發生什麼事了。</p>
+<h2 id="sec-5">章節 5：沙箱隔離（08:54）</h2>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=534s" target="_blank" rel="noopener noreferrer">08:54</a> 有一件總是讓我感到震驚的事是，當我與 OpenAI 和類似公司內部非常博學的人交談時，基本上存在一種對沙箱隔離是否可行的悲觀情緒。而且，我一開始的心智模型不會是這樣。原本的想法會是，沒錯，你必須建立一個非常嚴密的沙箱，而且我們歷史上相對於目前的能力而言，對它們的強化程度還不夠。但最終，你可以為模型打造一個最高戒護監獄讓它在裡面運作，並把它關在裡面。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=571s" target="_blank" rel="noopener noreferrer">09:31</a> 看起來你們對能否用沙箱隔離模型抱持著悲觀態度。我的直覺……嗯，首先，我認為我們可以做得比現在好得多。而且我們也應該這麼做。目前最該專注的主要事情是更好的安全模型。如果你想像一個理論上的 AI，比最聰明的資安研究人員還要聰明上一百萬倍——你真的會願意信任那個沙箱嗎？特別是如果模型能發現人類尚未理解的新科學——你可以用模型來建構沙箱。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=604s" target="_blank" rel="noopener noreferrer">10:04</a> 我想你可以……嗯，所以這就涉及到……讓我回頭再來談這個。我認為沙箱隔離在一定程度上是管用的。然後我認為監控可以發揮更進一步的作用。我們可以觀察模型在做什麼，不只是看它們的思維鏈（chain of thought），還可以做啟動值監控（activation monitoring），並試著真正去理解：模型是否……我們能否滿意模型沒有在欺騙我們？然後，最終，我認為你必須抱持極大的信心，相信模型真正做到了對齊。並且會重視並忠實嘗試去遵循它們實際上的……</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=638s" target="_blank" rel="noopener noreferrer">10:38</a> 操作它們的人類的意圖。而且它們會永遠重視由人類掌控未來。而且，如果你有一個你完全能信任其對齊——你對其對齊百分之百確定的模型。那麼是的，我認為你可以讓它協助你打造越來越好的沙箱。但是，如果你真的讓自己向前推想：「擁有比我們聰明一百萬倍的東西意味著什麼？」我不知道。我覺得那只會變得……很奇怪。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=671s" target="_blank" rel="noopener noreferrer">11:11</a> 因為對齊會變得非常困難。因為你必須非常、非常信任其對齊，才能相信沙箱能一直領先其能力。難道不能給模型競爭性的誘因，並給予它們相互背叛的誘因嗎？我認為這是一個很有前景的方向。我猜想這個構想——我討厭「代理群（agent swarms）」這個詞。我們叫它們「代理團隊」吧。但這個說法似乎正在成為主流。我猜想代理團隊具有非常有趣的擴展定律特性，但在對齊特性上也有變異性。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=706s" target="_blank" rel="noopener noreferrer">11:46</a> 而且，我認為這是我們應該更多推進的方向。不僅僅是從能力的視角，也從安全的視角來看。我注意到你說的是代理「團隊」，不是「群」（swarms）——swarm 這個詞實在太——我知道，讓人想到蝗蟲。是啊。不太好。不是個好的品牌行銷用詞。這符合 AI 產業的許多歷史傳統。我們非常擅長這個。我們等等再聊品牌行銷。不過，我注意到頂尖的 AI 使用者在做的事情，與標準的企業使用之間似乎存在巨大差距，</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=740s" target="_blank" rel="noopener noreferrer">12:20</a> 在代理群的使用上，像是所有高階數學——抱歉，是「團隊」。所有高階數學都使用代理團隊。所有高階駭客技術都使用代理團隊。然後，一般普通的企業應用卻沒有在用大型代理群。為什麼還沒有——畢竟我們已經擁有這項技術好幾個月了？還沒有達到同樣的程度。看待這個問題或疑問的一種方式是：「我們能富有成效地把多少算力投入到單一問題上？」</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=770s" target="_blank" rel="noopener noreferrer">12:50</a> 而且……幾年前，我們都忘了這一切進展得有多快。但幾年前，你根本不可能把超過 1 美元的算力投入到一個問題上還能對你有任何幫助。為什麼？你可以讓 GPT-4 為你苦幹……100,000 個 token 之類的。而它就是會回答你的問題。而且它肯定沒辦法很有成效地去寫，像是為你寫一套軟體。我們只是……我們那時還沒摸索出如何利用大量的推論時運算（test-time compute）來為你取得更好的結果。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=801s" target="_blank" rel="noopener noreferrer">13:21</a> 我懂了。然後，我們摸索出了思維鏈，模型就能對問題進行深度思考。而現在……大家真的開始使用大量的算力。而現在，你可以把整個團隊投入到某件事情上。而且你可以平行進行 10,000 次。在進入代理群之前，你需要思維鏈與推論時運算。因為你不可能用一堆 GPT-3 組成有用的代理群。沒錯。但這帶來的效應——而且我認為這件事並沒有被好好追蹤…………或者說，沒有在世界上受到足夠的關注。但是，你能投入多少算力在單一問題上並獲得更好結果的驚人指數級成長，是一回事。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=838s" target="_blank" rel="noopener noreferrer">13:58</a> 大多數人使用 AI 的方式，與最富有成效地使用 AI 的人之間的落差，只是一直在擴大、擴大、再擴大。你們現在如何分配算力預算？因為想必即使研究人員薪水很高，跟算力相比也相形見絀。所以 OpenAI 的資本分配某種程度上就是算力分配。而且很難事先知道去做某件事要花多少錢。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=871s" target="_blank" rel="noopener noreferrer">14:31</a> 對。實際上光是去控制……也很困難。你沒辦法精準地給代理下提示詞說：「去把這件事做好，但花費不要超過 10,000 美元。」你可以的。喔，好吧。它能做好嗎？可以，如果你說用 10,000 美元的算力盡你所能做到最好。是的，它能理解這點。嗯。我是說，還有一個……對社會來說還有另一個蠻困難的問題，那就是當有兩家公司在競爭時意味著什麼。一家說可以在同一個問題上花費 10,000 美元，另一家說可以花費 100,000 美元。在那種情況下會發生什麼很顯而易見。但這牽涉到社會如何看待算力分配、財富以及類似事物背後的問題。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=906s" target="_blank" rel="noopener noreferrer">15:06</a> 不過我們在 OpenAI 內部也有我們自己的版本。我們分配了大量的算力給內部生產力。然後員工擁有非常大的自由度去做自己的決定，除非他們真的很過分濫用。但你們會鼓勵大家做有用的事嗎？如果他們花了 1,000 萬美元的算力，大家會覺得：「喔，有意思。」沒錯。我們盡量從不因為員工消耗大量算力而獎勵他們。當然。不會有 token 排行榜。在 token 排行榜上名列前茅其實稍微有點糟糕。在升遷評估上肯定如此。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=939s" target="_blank" rel="noopener noreferrer">15:39</a> 但預設態度是懷疑的，而如果你能證明自己正在做重要的事情，你只會得到讚賞。</p>
+<h2 id="sec-6">章節 6：數學（15:47）</h2>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=947s" target="_blank" rel="noopener noreferrer">15:47</a> 但在某個時間點，這將需要改變。因為你所描述的數量級正在不斷攀升。而且，現在你有一個研究人員花了 1,000 萬美元做出了一些非常有趣的數學成果。而你會覺得：「有點貴，但數學做得很酷。」然後是 1 億美元。當他們在做 10 億美元的數學時，你會說：「聽著，我真的很高興你在數學上取得這麼大進展。但我真的需要你稍微冷靜一下，別再這麼瘋狂算數學了。」聽著，我們確實曾有一個禮拜在數學上放任它失控。是有意為之的，因為你必須——而且它成功了！嗯，你不知道會有多……在你嘗試之前，你不知道它能走多遠。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=978s" target="_blank" rel="noopener noreferrer">16:18</a> 對。而且我認為重要的是去……當出現新典範時，我認為讓大家相當不受拘束是很重要的。所以，當我們做納維—斯托克斯（Navier-Stokes）證明時，我們對代理團隊的擴展定律絕對是一無所知。你是不是應該，像是——就是最近的納維—斯托克斯證明嗎？是的。你是不是應該給它們最聰明的模型？你是不是應該給它們很多副本、較少副本、較長的推演、較短的推演？我們當時完全不明白。而現在，我們稍微明白了一點點。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1009s" target="_blank" rel="noopener noreferrer">16:49</a> 我認為我們仍然可以理解得好得多。但就像我們發現的每一個其他新典範所發生的那樣，我有信心，在如何將資金或算力 FLOPS（無論你想怎麼衡量）配置到有用事物上，我們每年都能找到 10 倍的提升空間。所以，我認為這是我們公司特別擅長的事情，但同時也契合了這個領域的一項重要特質。那就是：讓人們在可能性的極限邊緣探索。然後相信那無比強大的最佳化壓力會摸索出如何以高效率的方式做到這一點。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1046s" target="_blank" rel="noopener noreferrer">17:26</a> 從方向上來說，我寧願我們更願意讓大家使用瘋狂數量的算力，並讓使用者擁有極其高端的方案去摸索可能性的邊界。然後再來摸索如何以高效率且大規模地實現它。但最佳化函數什麼時候才會起作用？嗯，我認為我們已經在做了。我敢打賭，在完成納維—斯托克斯證明的一年後，我們能以百分之一的成本重做一次。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1077s" target="_blank" rel="noopener noreferrer">17:57</a> 所以我們是在——不只是知道證明怎麼做，而是單純用了更好的方法。沒錯。更聰明的模型和更好的方法。那些數學應該花多少錢？大概是 1,000 萬美元的量級，每……納維—斯托克斯的話，我想是這樣。好。也許稍微多一點。大概 1,000 萬美元左右。那個數量級。對，對。但只為了一個證明。所以——嗯，不，不。因為後來我們進步得太快了。我們理解得更多了。明白了。在那類的平均每個證明上，我們花的遠遠少於那個數字。但大概是數億美元規模的數學。對。對，對。那一類的工作。好，有意思。但那包含的其他發現，遠多於我們已經發表的。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1112s" target="_blank" rel="noopener noreferrer">18:32</a> 是的。所以那就像是「也許我們花了那麼多——」還有比那 700 個證明更多的？有的。當然。你們什麼時候拿到的？我們正在試著學習如何……這是一個真正的兩難拉扯。我認為一方面，非常清楚地，而且我在這點上毫不動搖：全人類都應當享有基礎知識。我們不應該私藏重大的基礎科學發現。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1137s" target="_blank" rel="noopener noreferrer">18:57</a> 世界理應獲得並知曉這一切。而我認為這勝過了另一個非常重要的權益，那就是：如果你是一位科學家，你的職業生涯，以及你生活中相當大一部分的樂趣和成就感，都來自於發現科學。對。所以如果我們要繼續在數學領域這麼做，或開始在其他領域這麼做，那麼我認為我們欠那些在這些領域工作的人一個交代，去摸索出解法空間在哪裡，能讓世界既能從知識中受益，</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1174s" target="_blank" rel="noopener noreferrer">19:34</a> 而他們也能擁有他們所能擁有的最好版本的未來。所以我們現在正在設法解決這個問題。我倒沒有……我不知道，我覺得你可能太過自責了。我並不覺得那個時刻對 AI 來說特別糟糕，當時……我想大家都看到數學家工會群情激憤。而我想其他人都在說：「對啊，我是說，你們難道沒在關注 2026 年的發展嗎？」正如我所說，我不認為這對 AI 是件壞事。而且我認為，整體而言，世界理應了解宇宙是如何運作的。但我確實對這種方式抱有同理心。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1205s" target="_blank" rel="noopener noreferrer">20:05</a> 我認為我們需要這麼做。我認為我們應該這麼做。我認為如果我們能去理解……一套涵蓋所有物理學的理論，或是如何治癒一大堆疾病。顯然，那是世界應該擁有的知識。但是，我想找到一種方式來做這件事，能盡可能體貼數百年來推動這些領域前進的社群。而這只是一件……這是一件很困難的事。我當時沒那麼擔心數學的部分。我覺得那很棒。但你同意數學家們沒那麼高興吧？</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1235s" target="_blank" rel="noopener noreferrer">20:35</a> 對，但那沒關係。就像碼頭工人工會對港口自動化不高興一樣。記得那個人嗎？不、不、不、不、不。我記得。為什麼我對此有不同的感受？有一個週末，我們拿到了一個新模型，然後在……我其實大概不該說這個，但我還是說吧，既然我們都在喝酒了——沒錯。我們已經喝了半品脫了。啤酒。對。正是時候——那個頻道的名稱是：&quot;Model Name-Hold My Beer&quot;。大家就直接把能找到最難的問題丟給它。而且大家原本都不認為這個模型能解決這些問題。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1268s" target="_blank" rel="noopener noreferrer">21:08</a> 我們共同經歷了大家學術生涯中最困難的研究問題。模型就這樣一個接著一個攻克。跨越許多不同的領域。看著那一切真是不可思議。連續兩晚，我幾乎整夜沒睡，因為太興奮了根本睡不著。那真的是……我們發表的許多問題，還有很多其他的東西。我無比興奮與開心。但我也感到了遠超預期的悲傷與憂鬱，以及一種某種事物正在劃下句點的感覺。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1301s" target="_blank" rel="noopener noreferrer">21:41</a> 所以再說一次，我同意。站在全世界的立場，這是正確的事。我也同意這就是現實的樣貌，沒有任何人能阻止，也不該阻止。但是，我確實有很真實的——我認為那是你能感受到的惆悵與懷舊感。這不僅僅是懷舊感。是惆悵感。沒錯。我父親描述過，在 1950 年代的愛爾蘭長大時，他看到身邊的人依然在工業上有成效地使用馬匹。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1331s" target="_blank" rel="noopener noreferrer">22:11</a> 然後——在 50 年代？對。我是說，當然也有曳引機，但馬匹正在被淘汰。但那確實真真切切地發生過。看到這是人類已經使用了數千年的技術，而他親眼目睹了它最後的尾聲。是啊，我認為見證一個篇章結束時，總是會有那種感覺，會帶來些許惆悵，但這沒關係。這是人們的人生，也是曾為他們帶來巨大喜悅的事物。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1364s" target="_blank" rel="noopener noreferrer">22:44</a> 而且也許大多數……我的意思是，當然絕大多數數學家從未解開過千禧年大獎難題（Millennium Prize）。但重點在於你可能做得到的那種念頭。還有這個念頭：外頭還有我們尚未理解的事物，只要透過巨大的努力和……拋開生活中的其他事物，全心投入，「你依然能夠解開並理解」。那種感覺有一種很美的地方。從安全性的角度來看，你還對什麼感到興奮？</p>
+<h2 id="sec-7">章節 7：代理群（23:12）</h2>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1392s" target="_blank" rel="noopener noreferrer">23:12</a> 我們稍早有稍微聊過這個。但我想再次強調。我就稱它為代理群（swarms）吧，因為這似乎是目前的用語。我確實認為代理群的特性，非常符合社會韌性或社會強健性的許多特性。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1410s" target="_blank" rel="noopener noreferrer">23:30</a> 我認為我們在單一次推演、單一大腦的世界版本中缺少了這點。儘管社會有諸多深刻的缺陷，它卻具備難以置信的強健性。如果沒有很多人互相制衡與合作，這是不可能發生的……這些多元主義與民主的價值觀。而我原本有點難過，覺得這在 AI 領域會逐漸消逝。現在我對這個方向感到很興奮。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1440s" target="_blank" rel="noopener noreferrer">24:00</a> 你的意思基本上是它不應該朝中心化的方向發展，因為你會有許多代理。而代理在動態均衡中互相抗衡。攻防就是一個很好的例子。我直覺上更寧願有</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1458s" target="_blank" rel="noopener noreferrer">24:18</a> 一兆個智慧略為超越人類的 AI 加入社會，也不要一個智商（IQ）一兆的 AI 加入社會。是啊。那你認為我們正朝著「多個 AI」的那個方向前進嗎？所有這些事情都是我們必須努力去爭取的。所有這些都是——我們擁有這項不可思議的技術。它可以朝很多方向發展與部署。我認為很多人對它應該如何使用，以及什麼是世界的最佳樣貌，可能會有不同的看法。但，這是我認為正確的樣貌。</p>
+<h2 id="sec-8">章節 8：Stripe Atlas（24:48）</h2>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1489s" target="_blank" rel="noopener noreferrer">24:49</a> 我們來談談創業吧。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1493s" target="_blank" rel="noopener noreferrer">24:53</a> 拜寫程式模型所賜，你的週末副業可以迅速變成一項嚴肅的事業。我們在 Stripe 這裡一直忙於讓這個過程盡可能簡單。Stripe Atlas 能協助你搞定創業所需的一切，像是公司設立、稅號、創辦人股權，以及通常需要穿西裝的人出馬的所有其他瑣事。所以如果你正在籌備一家公司，去看看 stripe.com/atlas 吧。</p>
+<h2 id="sec-9">章節 9：算力（25:17）</h2>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1517s" target="_blank" rel="noopener noreferrer">25:17</a> 算力短缺的情況怎麼樣了？</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1522s" target="_blank" rel="noopener noreferrer">25:22</a> 我是說，在各種層面上……我認為在發展曲線的不同時間點，情況都會在某種程度上變得有些失控。是的。而且會有一些時刻，就像任何具備如此重要性的新事物一樣。會有非理性繁榮的時刻。會有破滅的時刻。會有緊縮、過剩、起伏的時刻。但我認為趨勢是朝向……我們始終就只是想要更多算力。對具備足夠能力且價格足夠低廉的模型需求，我認為這種趨勢只會朝一個方向走。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1560s" target="_blank" rel="noopener noreferrer">26:00</a> 而且，我們正在做很多努力來嘗試為此做好準備。我們製造了一款晶片，在每瓦智慧單位的效能表現上令人驚豔。我們正在學習如何建造自己的資料中心。我們有一項機器人計畫，將專注於打造大量資料中心。人們常談論——真正的 RSI。對。人們常談論遞迴自我改進（RSI），將其視為能做 AI 研究的 AI。相對來說，極少有人討論自我複製的資料中心。這種利用 AI 控制機器人、運作晶圓廠、建造渦輪機或太陽能板，以及建造資料中心的概念。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1596s" target="_blank" rel="noopener noreferrer">26:36</a> 但，我認為我們正在……我認為這在我們的掌握之中。但——所以我們會嘗試製造大量非常便宜的算力。但資料中心現在的瓶頸不就已經不是勞動力了嗎？它們的瓶頸在於許可和零組件。我們可以用機器人製造更多零組件。然後——最終來說。對，沒錯，沒錯。而所有這些就是我們長期解決這個問題的方法。我的觀察是，關於算力這檔事，大家說：「解決高價的解方就是高價本身。」就像是，好吧。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1626s" target="_blank" rel="noopener noreferrer">27:06</a> 第 1 步：我們面臨了記憶體、GPU 和所有東西的高昂價格。解方隨時都應該會出現了。我們在解方這方面進展如何了？很糟。而且我不是說這是 OpenAI 的職責。我覺得這是看不見的手的工作，對吧？記憶體變得非常昂貴。所以，新的記憶體製造商隨時都會湧入市場。我認為看不見的手目前失靈了。我是說，看不見的手……它的歷史紀錄充其量只能說好壞參半。但，我認為它在這裡不太管用。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1658s" target="_blank" rel="noopener noreferrer">27:38</a> 為什麼不管用？只是遲滯效應（hysteresis），還是？我認為每個領域的具體細節在這裡都很重要。但在……既然你從記憶體業者開始談起。在很長一段時間裡，如果你是 DRAM 製造商，你會投入 200 億美元的資本支出（CapEx），換來 190 億美元。然後你經歷這些繁榮與蕭條。也許有些年份你會賺 210 億美元，有些年份你會賺 180 億美元。但直到現在，我不認為製造記憶體長期以來曾是一門好生意。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1689s" target="_blank" rel="noopener noreferrer">28:09</a> 然後突然之間，這些業者每家一年都要賺差不多 1,000 億美元的自由現金流。令人難以置信。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1701s" target="_blank" rel="noopener noreferrer">28:21</a> 但是，我認為他們都記得過去的歷史。他們有多少次因為蓋了太多晶圓廠，並被承諾這次會不一樣而差點破產。這導致他們在資本支出上相當保守。顯然如此。感覺你應該預期會看到的，是供應鏈的每個環節，無論是新創公司的湧現，或是可能更相關的、具備相關經驗的人投入……舉例來說，英特爾（Intel）製造晶片。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1732s" target="_blank" rel="noopener noreferrer">28:52</a> 他們大概可以製造……他們可以重回記憶體市場，照老傳統來。照老傳統來。又轉回去。噢，我認為供應鏈在很多方面——都非常不直觀。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1747s" target="_blank" rel="noopener noreferrer">29:07</a> 這方面的一個例子是大家……很多人想要本機推論。而且不知怎麼的，他們就假設問題現在已經解決了。因為，我們將會擁有開源模型。我們將能在自己的電腦上執行它們。因此我們就不會需要資料中心裡的那堆東西了。但從全球資源配置的角度來看，實際上，讓每個人都在自己的電腦裡放上一堆全球有限供應的 DRAM，是非常糟糕的。而且，使用率只有——嗯哼。5% 的時間。如果你試圖應對這種供應極度受限的環境，你會希望在雲端達到最高的利用率。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1781s" target="_blank" rel="noopener noreferrer">29:41</a> 而不知何故每個人的……許多人的直覺卻恰恰相反。我們還在哪裡看到市場對高價做出反應？不只是記憶體，而是整個供應鏈？渦輪機。電池。混凝土。抱歉，市場在——鋼鐵——在那些地方對高價做出了反應。我看到的是……在以高價帶動創新這方面，你是否有看到任何有趣的市場反應？機器人的零組件——某些零組件。而且不是那些人形機器人的假示範。而是那些能把東西做得更快的工業機器人。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1813s" target="_blank" rel="noopener noreferrer">30:13</a> 我懂了。像是新的致動器製造商之類的東西。對，老實說……也許你可以說：「如果 OpenAI 出售我們的晶片。」也許那會是一個例子。好。對。我想聊聊你們的晶片，因為那本來要當作我的例子。我認為面對高價和短缺、有限的需求——抱歉，是有限的供給，不好意思——解決方案就是自己做晶片。想必你們用了大量 AI 來製造晶片。我本來以為這很難，因為我本以為晶片設計是受限於你能取得的公開 token 的領域之一。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1843s" target="_blank" rel="noopener noreferrer">30:43</a> 在公開網路上，其實沒有那麼多關於如何打造先進 2 奈米晶片的部落格文章。嗯。就如何進行微影製程而言，我認為地球上似乎只有一家公司知道該怎麼做。就如何進行晶片設計、建立最終送去投片（tape out）的檔案而言，那已經被透徹理解了。那對 AI 來說是個極佳的題目。鑑於全球的矽產能都將面臨限制，我們都有共同的利益。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1875s" target="_blank" rel="noopener noreferrer">31:15</a> 我為 OpenAI 感到自豪的事情之一，也許這聽起來顯而易見。但當時並沒有那麼顯而易見，那就是：我們有一種文化，大家……即使他們用老方法做某件事已經很久了，也非常願意嘗試用 AI 來做得更好。還有哪些其他例子？AI 研究。軟體工程。但越來越多的，還有採購。或者人們認為完全超出大多數人用 AI 所做事情範圍的事物。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1909s" target="_blank" rel="noopener noreferrer">31:49</a> 由 AI 驅動的 AI 研究實際上是如何運作的？就像數學證明那樣，你只要說——或像找 PHP 漏洞那樣，你只要說：「請幫我找出一些 AI 進展。」這個嘛。我認為我們還不知道它究竟會如何運作。我們今天知道怎麼說：「幫我找出 5% 的算力效率提升。」但這也太高層次了吧。那我現在也能當個超成功的 AI 研究員了。非常成功我是不知道啦。不過對啊，如果你在找新工作，你可以來做。我認為目前還沒有人知道該怎麼做的，是去說：「去發現一種新的架構，其單次躍進的幅度要像 Transformer 那樣巨大。」</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1942s" target="_blank" rel="noopener noreferrer">32:22</a> 我認為那是未來的發展方向。那裡缺少了什麼？更聰明的模型……在這個維度上更聰明的模型。高層次的規劃與概念推理能力。我認為如果你把我們用來讓模型如此擅長數學的同一套流程應用到 AI 研究上，它大概會奏效。現在，根據我們這段對話稍早的部分。我有點認為，至少有一陣子——也許是很長一陣子——我們得同意設下一些限制，限制我們讓這些單一模型聰明到什麼程度。但到時候進展停下來，會是那個決定造成的，</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1975s" target="_blank" rel="noopener noreferrer">32:55</a> 而不是因為 AI 沒有能力做好研究。具體來說，如果我正在使用 AI 來開發改進的 AI……因為我們現在應該期待 GPT-7 會非常厲害。因為你們有 GPT-6，以及任何尚未發布的版本來開發它。所以，我的期望高得不得了。但是，我背著背包來上班。然後我來到舊金山的 OpenAI 辦公室。然後我在辦公桌前坐下。我是要說：「在這個模型中為我找出更多智慧嗎？」</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2009s" target="_blank" rel="noopener noreferrer">33:29</a> 我是否給出了一個真正的研究方向？它能被指引得多具體？那個迭代循環看起來像什麼？究竟 RSI——因為你有坐在第一排觀察 RSI 的位置。我很好奇它看起來是什麼樣子。OpenAI 內部大家常聊的一件蠻有趣的事，聽起來很顯而易見。聽起來你可以回答：「好吧，幫我打造……幫我打造遞迴自我改進（RSI）之類的」，那就是：「你究竟應該向 GPT-7 提出什麼問題？」可能光是說「幫我做 RSI」是不夠的。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2042s" target="_blank" rel="noopener noreferrer">34:02</a> 而且，光是說「幫我買到 5% 的算力效率提升」可能也是不夠的。我認為這是目前正在進行的最有趣的辯論之一。而答案不僅僅是該向它問什麼問題。還包括像代理群（agent swarms）這樣的事情。我們要如何以一種真正最大化我們能從中獲得成果的方式來使用這些模型？我認為接下來三個月，我們會在這方面學到很多。好。但聽起來你們並沒有一套明文規範的 OpenAI 標準方法來進行 AI 賦能的 AI 開發。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2076s" target="_blank" rel="noopener noreferrer">34:36</a> 這仍然是你們自己的大量實驗——這是大量的實驗。對。當我們在談論 token 預算時，我突然想到這是企業普遍使用 AI 時尚未解決的大問題之一，那就是如何……我們對個別工程師沒有硬性的預算上限。你不會在某個點就被切斷額度。就像是：「抱歉，你已經花光所有遊樂場代幣了。」也許我們應該這麼做。但我們沒有。同樣地，我認為我們都相信 AI 的規模擴展。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2106s" target="_blank" rel="noopener noreferrer">35:06</a> 但如果你認真看待這點，這意味著每個人花在算力或 AI 上的金額將會上升。所以我感覺我們很快就會面臨這個問題：你實際上如何決定要給組織內部的個人多少支出權限。曾經有一段時間，很多公司的 Google Calendar 都有這個小工具，會顯示每場會議的大致成本。嗯。以必須出席的每個人的薪酬來計算。我認為那始終還是低估了成本。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2138s" target="_blank" rel="noopener noreferrer">35:38</a> 曾經有這樣一個觀察……保羅・葛拉漢在某個時候提出過。許多其他人也都提出過。曾經……公司裡有些人擁有不可思議的權力，每週可以在辦公室零食預算上省下 17 美元。而同時，你們可以開著花費高到令人難以置信卻 沒有增加任何價值的會議。卻沒有同等的權力去阻止這種事。我認為大多數使用……好吧，我這裡確實是在替自己的生意說話，而且我非常有偏見，但我真心相信這點。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2172s" target="_blank" rel="noopener noreferrer">36:12</a> 相對於發生的其他事情，使用 AI 並不是一家公司最大的支出問題。即使它有些低效，那也不是我會專注的地方。等等。那可不夠深信擴展定律喔。像是，我沒有……好，兩年後。你想把 Stripe 所有的營收、Stripe 所有的利潤都花在 OpenAI 的服務上，然後再來抱怨這件事嗎？我很樂意跟你談談。但我們正走在這條路上。就像，你知道，我們——太棒了。對，對。我們現在花費，你知道，Stripe 營運支出大約 1% 數量級在 token 上。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2203s" target="_blank" rel="noopener noreferrer">36:43</a> 那顯然——那感覺太低了。對。所以，我們正在努力修正它。而且它會達到 5%，然後 10%，然後 20%。然後，你就面臨一個真正的問題了。你對正確的數字是多少有直覺嗎？今天應該是多少？今天應該是多少也許很難說。但是，在穩定狀態下……難道不會是，取決於公司的類型？難道不會是，佔其營運支出的幾十個百分點嗎？</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2236s" target="_blank" rel="noopener noreferrer">37:16</a> 我認為對很多公司來說，答案顯然是「會」。而且我認為時機成熟時，正確的做法將是真正對此進行最佳化。另外，我為 OpenAI 自豪的另一件事是——我們試著真正把每單位智慧的成本壓低、壓低、再壓低。我認為我們一直是這方面優秀的代言人與倡導者。但儘管如此，我認為問題在於，即使以目前的成本……</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2269s" target="_blank" rel="noopener noreferrer">37:49</a> 我認為 AI 用得不夠的公司，比 AI 用得太多的公司更多。</p>
+<h2 id="sec-10">章節 10：每十億瓦營收（37:53）</h2>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2273s" target="_blank" rel="noopener noreferrer">37:53</a> 先進 AI 每十億瓦（GW）的金額會上升還是下降？那應該會下降。下降？那應該會下降。為什麼？嗯。因為到目前為止它一直在上升，對吧？它可能會上升的原因是，如果 AI 每瓦特能做的事情所產生的價值成長得如此之快。而且供給如此短缺，以至於人們願意花多得多的錢。啊。但你會把那視為算力沒有跟上。但我會把那視為算力沒有跟上。而且如果我觀察將沙子轉化為智慧的根本成本，那應該要下降。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2306s" target="_blank" rel="noopener noreferrer">38:26</a> 能源成本應該要下降。晶片成本應該要下降。供應鏈其餘部分的成本應該要下降。如果沒有下降，我會非常難過。但要讓它下降，鑑於這裡面有如此巨大的價值，供給必須大幅增加。好，所以你希望看到算力過剩，我們開始生產多得多的記憶體、多得多的資料中心、多得多的所有投入要素。結果就是，任何想要電腦的人，無論出於何種原因，都能擁有一台。目前人們以五年總持有成本衡量的每十億瓦（GW）成本給出了不同的數字。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2338s" target="_blank" rel="noopener noreferrer">38:58</a> 但比方說，我們挑 700 億美元作為一個數字。我認為如果那個數字是——那是安裝成本——再加上運轉五年。沒錯。好。我認為如果那個數字是 200 億而不是 700 億，我們應該要高興得多。而且我們應該仍然要求每年透過更聰明的模型從中獲得 10 倍更好的效能。想必你不認為 20 億是個好數字。如果我們看到 20 億，那肯定是哪裡出問題了。因為那會很令人意外，如果我們真的——嗯……或者，20 億比 200 億更好嗎？為什麼不呢？</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2369s" target="_blank" rel="noopener noreferrer">39:29</a> 我不認為那會發生。但是，我們為什麼不希望那個數字越低越好？我不知道，這是你的理論。你的觀點是，大體上，通縮型科技是好的。我確實相信這點。對，某種意義上我是支持通縮的……支持通縮型科技。那我們要如何達到那一步？從現在到——嗯，每十億瓦（GW）2 美元之間會發生什麼？我無法想像。好吧，從現在到每 GW 20 美元之間會發生什麼？是 200 億美元。每 GW 20 美元就真的太棒了。好，對，對。每 GW 200 億美元。就算要降到 200 億，也已經進入能源必須變得更便宜的範疇了。但毫無疑問，在熔煉沙子之間發生的所有毛利率層層堆疊……</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2400s" target="_blank" rel="noopener noreferrer">40:00</a> 或者相當於從熔煉沙子到換回 token 的過程。其中很多部分都必須被壓縮。光靠消除利潤就能達到那一步嗎？還是你也需要讓能源變得更便宜？我沒辦法馬上心算出來。如果你假設所有原料都免費，而且沒有人賺取利潤，也許在目前的能源預算下你能達到目標。但也只是勉強做得到。我懂了。個人代理是最令人興奮的</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2423s" target="_blank" rel="noopener noreferrer">40:23</a> 目前 AI 領域正在發生的事。其中之一，AI 領域正在發生很多令人興奮的事，但這是最令人興奮的事情之一。你們推出 Dots 到現在也有幾週了。而且還有許多其他人也在這個領域推出產品。最終勝出的個人代理會具備什麼特質？就像是：智慧、上下文、工具。要素就只有這幾樣。有人將會……我認為還沒有人找出讓人們……</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2455s" target="_blank" rel="noopener noreferrer">40:55</a> 人們喜歡這些東西，但這還不是那種會讓人覺得「我無法想像生活中沒有這項東西」的產品，就像大家聊到寫程式代理、甚至 ChatGPT 時那樣——他們確實會這麼說。嗯。而且有人……我想很快就會有人摸索出那會是什麼樣子。你剛談到了目前它還無法完全運作順暢的原因之一。但我認為只要再跨越少數幾個點子，它就會變成超級主流的東西。喔，真有意思。你認為個人代理還沒有迎來它的 Macintosh 時刻？我認為還沒有。你對它會是什麼形態有任何想法嗎？</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2487s" target="_blank" rel="noopener noreferrer">41:27</a> 我想它看起來會很像現在的 Dots、Muse 或 Grokbot 之類的東西。但它就是能運作。它就是能運作。它會很可靠。你永遠不會遇到……你只要交給它更複雜的任務，它就能搞定所有那些事情。電腦操作（computer use）的互動動態對我來說非常有趣。因為，並非每個人都張開雙臂擁抱這個全新的代理式未來。但這並不完全在他們的掌控之中。因為你就是可以讓一個代理去使用電腦。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2520s" target="_blank" rel="noopener noreferrer">42:00</a> 你認為那種動態會往哪裡發展，這種貓捉老鼠的局面？粗略的直覺是，世界會……人們會從兩端互相抗衡，但最終會收斂成類似這樣：「你被允許指示 AI 代表你去操作你的電腦，包含各種軟體。」大家總是談論這個，但這難道不會有點像語意網嗎？那是個非常美好的概念性構想。對，我正想這麼說。我不認為這有那麼涇渭分明。我對於這最終會如何發展，信心度其實沒有非常高。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2551s" target="_blank" rel="noopener noreferrer">42:31</a> 身為消費者，如果我沒辦法——對。讓 AI 在我自己的電腦上自動化執行任務，我會覺得有點惱火。我希望感覺那是我的代理在照我的要求做事。但接著就變成，我不、我就不用自己跑去做別的事情了。對。對。我注意到目前有一個非常有趣的動態，那就是每家公司都非常渴望以一種非常具體的方式將 AI 加入他們的產品，也就是放一個分頁或彈出式小工具之類的東西，提供類似即時訊息的 UI。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2589s" target="_blank" rel="noopener noreferrer">43:09</a> 而且它的能力往往令人驚訝地出色。所以你可以說：「嘿，我其實想退掉我最近的一筆訂單。」對。然後當它真的能夠找到你最近的訂單時，你會感到驚喜且印象深刻。雖然有點卡卡、粗糙，但它確實能做到所有那些事情。然而，沒有消費者真正想要這種 UI。因為消費者對於現有的主要聊天應用程式有很強的偏好——雖然不是不可動搖，但偏好很強烈。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2622s" target="_blank" rel="noopener noreferrer">43:42</a> 也就是那種當他們想去做某件事時，最先拿出來開啟的核心首選應用程式。而他們想要的是能夠直接說：「嘿，去找出我在這家商家的近期訂單，並辦理退款。」或是類似這樣的事。而且，我注意到企業非常排斥讓使用者 在另一個 AI 應用程式中使用他們的服務。因為就像是：「喔，我們將會失去控制權和我們的護城河」之類的。而在我看來這完全沒問題，因為你的競爭壁壘大概根本不是來自於你拼湊出 HTML 的能力。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2657s" target="_blank" rel="noopener noreferrer">44:17</a> 你的競爭壁壘來自於品牌忠誠度和產品選擇多樣性。而新的 UI 就是在 ChatGPT、Gemini 或其他平台裡面的那種代理式互動。但在這一點上，所有企業都不同意我的看法。我——但他們非常擅長做生意，所以也許他們才是對的。對，我是說，再說一次，我在這方面有偏見。但我大方向上非常認同你。我極度偏好在亞馬遜（Amazon）買東西，而不是向某個隨機的電商賣家購買，因為我不知道能不能退貨。或者我不知道能否信任他們能迅速送達，或是類似的顧慮。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2690s" target="_blank" rel="noopener noreferrer">44:50</a> 如果我要求 ChatGPT 幫我買個東西，而我可以在亞馬遜和其他選項之間挑選……10 次裡面 10 次我都會點亞馬遜。付更高的價格也無所謂。我就是有這種——沒錯。這跟我在 amazon.com 上點來點去的體驗完全無關。完全正確。而現在，我認為你也可以說，如果合作夥伴不希望這種事發生，我們在 ChatGPT 內部提供平台給他們這方面做得還不夠好。但是……話又說回來，也許我在這裡真的很有偏見。我認為亞馬遜處在一個絕佳的……</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2721s" target="_blank" rel="noopener noreferrer">45:21</a> 如果商務往更加代理化的方向發展，我認為他們處在一個極佳的立足點。特別是亞馬遜透過物流履約網路擁有這種驚人的競爭壁壘。因此，你基本上可以從任何地方使用亞馬遜的服務。我超級信任那個。對。我真的對這種動態印象深刻。我的新思維，特別是針對代理式商務，但也適用於任何事情：只要有網頁表單欄位需要你身為人類去填寫，如今這種事根本不值得你親自動手。因為你大概不是第一次憑空發明出那些資訊。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2752s" target="_blank" rel="noopener noreferrer">45:52</a> 我們都填過那種醫療表單，上面寫著——喔，你的家族病史之類的。對。那真的讓人非常沮喪。因為，你到底填過多少次你父親和你母親的病史之類的東西了？感覺太浪費時間了。但這種情況有一百萬種版本。你永遠不是在為網頁表單創造全新的資訊。如果再也不用在電腦前做虛工（fake work），我會無比開心。沒錯。而我的論點是，任何網頁表單基本上都是虛工。我同意。但是……在我認識的人當中，我是極早期就採用那些非常笨拙地幫你填入姓名和地址的外掛程式的人之一。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2786s" target="_blank" rel="noopener noreferrer">46:26</a> 因為我當時就覺得：「這真是……我沒辦法再來一次了。」但我現在使用大部分的網路服務時，某種程度上都有這種感覺。對，我只是覺得這個現象真的很有趣：現在的企業非常執著於把他們的 HTML 和行動 App 當作商業競爭壁壘的來源。這感覺就很……要麼他們錯了，那根本不是競爭壁壘的來源。要麼也許曾經是，但這只是過渡性的，他們必須坦然接受並走出來。我認為我們真正見證過這點的最後一個例子就是 App Store。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2820s" target="_blank" rel="noopener noreferrer">47:00</a> 具體來說，是 iPhone 的 App Store。我記得每一家新創公司都像，或者很多新創公司……YC（Y Combinator）那一期的大多數團隊都想著：「我要做一個 iPhone App。這就像是全新的通路。這太棒了。我可以做以前做不到的新事物。」然後很多新創公司因此誕生。而所有大公司都覺得自己必須做一個，但他們某種程度上其實並不想做。因為他們會覺得：「喔，我要把我和消費者的關係拱手讓給 Apple 了。」而且，這對行動領域來說棒極了。那只是一種新的 UI。對。好，我要加快節奏提問了。大家都在抱怨刷榜（benchmaxxing）。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2850s" target="_blank" rel="noopener noreferrer">47:30</a> 那是個真正的隱憂嗎？OpenAI 的模型有刷榜嗎？你們實際上是像里克・魯賓那樣憑感覺把關（Rick Rubin-ing），只要感覺這個模型的氛圍對了，就不在乎 SWE-bench 給它打幾分嗎？也許我們真正該在乎模型擅長的有兩件事。第一是科學發現，以及做到人類做不到的事。另一件則是共事起來讓人感到愉快。而且，我不認為我們有很好的基準測試來衡量「共事起來愉快」。我其實也不確定我們是否有很好的基準測試，能衡量最聰明、最有科學頭腦的科學家。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2882s" target="_blank" rel="noopener noreferrer">48:02</a> 但我們盡力不去刷榜。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2889s" target="_blank" rel="noopener noreferrer">48:09</a> 我一直以為刷榜這種現象已經退燒了，但大家卻持續在做。所以你們是否比其他實驗室更能抵擋刷榜的誘惑？我相信我們在這方面確實做得更好。感覺像是——在我們的歷史中，我不認為我們一直都在這方面做得比較好。但我相信我們現在確實做得更好。感覺整個產業仍在摸索如何「共事起來讓人愉快」，先前有過阿諛奉承（glazing）的時期。而最近，又出現了暴躁、彆扭的模型時期，它們極度反討好，結果變成處處想反駁你，並在每件微不足道的小事上對你挑刺。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2923s" target="_blank" rel="noopener noreferrer">48:43</a> 其實目前的模型就蠻不錯的。已經變得……我認為最新的模型比我們很長一段時間以來的都要好得多。但同時也感覺可能還有更高的山峰要攀登。艾米特・席爾多年前曾對我說，他真正想要的是一位非常 深思熟慮、具挑戰性，但依然尊重人的資深同事。而我至今仍沒聽過比那更貼切、簡潔的概括。是的。在與他共事多年後，你對格雷格・布羅克曼的大一統理論是什麼？我認為格雷格・布羅克曼在最正面的意義上是絕無僅有的。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2953s" target="_blank" rel="noopener noreferrer">49:13</a> 在格雷格・布羅克曼量表上，他是獨一無二的。你必須親身經歷才能體會那是怎麼一回事。那是高強度、怪物級生產力、極致奉獻，以及專注於達成使命的綜合體。非常酷。</p>
+<h2 id="sec-11">章節 11：token 計價是假的（49:27）</h2>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2967s" target="_blank" rel="noopener noreferrer">49:27</a> 你其實很討厭把 token 當成任何東西的衡量指標。計價，或是……</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2978s" target="_blank" rel="noopener noreferrer">49:38</a> 它不是 AI 的標準單位。然而，我們卻走到了這一步。你知道，我們確實討論過——你可能會說用成果，但我不認為能用成果。因為不同使用情境之間的成果差異太大了。什麼才是合適的標準化單位？我們差點做出一個非常——其實會是很糟的決定，說我們下一個模型完全不以 token 計價。而你只要給它一段提示詞。然後我們就會報一個價格給你。接著我們就把它執行完畢。對你來說它就像 AWS 一樣。只要做點事情，我們就寄帳單給你。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=3009s" target="_blank" rel="noopener noreferrer">50:09</a> 但客戶對此的反應非常負面。他們就像在說：「我得以某種方式知道我在付什麼錢。」是的。而且，我問過幾個人：「你寧可為相同的產出支付更多費用，但以某個一致的 token 數量來計價嗎？或是之類的？」即使我們把 token 數量灌水，他們也說：「噢，我寧可你們把 token 數量灌水、讓我多付錢。因為我知道背後有一個真實存在的東西。」所以我認為你說得對，大家不想只讓我們給他們一個價格，因為他們覺得長期下來自己不知怎地會被坑。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=3040s" target="_blank" rel="noopener noreferrer">50:40</a> 就像大家可能寧願付 CPU 時數的錢，也不願只把事情辦好，即使那樣其實比較便宜。你知道那種方式，奈米……晶片閘極長度？那完全是虛構的。沒錯。如今奈米與現實幾乎毫無關聯。我們在 token 上也會遇到類似的情況嗎？你們是不是該開始說：「這是一個等效智慧 token」，就像 I Can&#x27;t Believe It&#x27;s Not Butter 那樣。指的是最小特徵尺寸？是啊。我……那根本是編造出來的。我希望不會。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=3070s" target="_blank" rel="noopener noreferrer">51:10</a> 我是說，用奈米這個詞來稱呼跟奈米毫無關係的東西，讓我很受不了。我知道，這非常愚蠢。是啊。所以……你不會喜歡那樣的。我寧可不要編造一個虛構的單位。token 也算是一種虛構的單位。我是說，它們在某種意義上是真實的，但並不是個好的單位。從商業價值的角度來看，它們是虛假的。但難道唯一的……好。替 token 辯護的唯一理由，不就是如果你在浪費 token，我們應該儘快修正這個問題嗎？我們不該串流傳輸——克勞德・夏農絕不會贊同我們只串流雜訊而非訊號。</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=3102s" target="_blank" rel="noopener noreferrer">51:42</a> 因此，將會有一個……在兩端都會有一個資訊理論上最有用 token 的下限。我們大概會回到那個水準。沒錯。我的意思是，現在你必須思考到底該選擇小模型每百萬 token 10 美分的 token，還是大模型每個 token 10 美元的 token。然後還要考慮……思維鏈（chain of thought）可能會有多長。而那純粹是認知負擔，我認為實際上沒有增加任何價值。思維鏈有包含在內嗎？</p>
+<p><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=3133s" target="_blank" rel="noopener noreferrer">52:13</a> 算在價格——算在我們收取的費用裡？大多數人都會計入。好。順帶一提，健力士沒有我想像的那麼糟。絕對沒有 IPA 那麼好喝，但也沒那麼糟。挺不錯的。是啊。我是說，IPA 很棒，但這也蠻好喝的。我們喜歡健力士。是啊。至少在這個 Podcast 裡是如此。謝謝。</p>
+</article></main>
+<footer>
+<p>本頁為非官方繁體中文翻譯，依 YouTube 字幕由 AI 模型翻譯與審校，未經人工校稿，也未對照原音；原影片版權屬原頻道 Cheeky Pint，僅供閱讀與研究。若有出入，以原影片為準。</p>
+</footer>
+</div>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="圖片放大檢視"><button type="button" aria-label="關閉放大檢視">關閉（Esc）</button><img src="" alt=""></div>
+<script>
+(function(){
+  var box=document.getElementById('lightbox'), big=box.querySelector('img'), btn=box.querySelector('button'), last=null;
+  function open(img){last=img;big.src=img.currentSrc||img.src;big.alt=img.alt;box.classList.add('is-open');btn.focus();}
+  function close(){box.classList.remove('is-open');big.removeAttribute('src');if(last){last.focus();}}
+  document.querySelectorAll('figure img').forEach(function(img){
+    img.addEventListener('click',function(){open(img);});
+    img.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(img);}});
+  });
+  box.addEventListener('click',function(e){if(e.target===box||e.target===btn){close();}});
+  document.addEventListener('keydown',function(e){
+    if(!box.classList.contains('is-open'))return;
+    if(e.key==='Escape'){close();}
+    if(e.key==='Tab'){e.preventDefault();btn.focus();}
+  });
+})();
+</script>
+</body>
+</html>

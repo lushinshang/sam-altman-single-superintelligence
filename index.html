@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%230f7b6c%27/%3E%3Cpath d=%27M12 46 26 30l8 8 18-22%27 stroke=%27white%27 stroke-width=%277%27 fill=%27none%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E">
+<title>寧要一兆個略超人的 AI：奧特曼為什麼反對單一超級智慧</title>
+<meta name="description" content="Cheeky Pint 訪談：OpenAI 執行長 Sam Altman 為什麼寧可要一兆個略超人的 AI，也不要一個一兆 IQ 的 AI；沙箱、算力與代理的說法逐項對照官方資料。">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="寧要一兆個略超人的 AI：奧特曼為什麼反對單一超級智慧">
+<meta property="og:description" content="Cheeky Pint 訪談：OpenAI 執行長 Sam Altman 為什麼寧可要一兆個略超人的 AI，也不要一個一兆 IQ 的 AI；沙箱、算力與代理的說法逐項對照官方資料。">
+<meta property="og:image" content="https://lushinshang.github.io/sam-altman-single-superintelligence/images/og-hero.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="一座孤立的巨大深色石碑，旁邊是一座由無數小窗燈火與連線組成的夜間城鎮">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="寧要一兆個略超人的 AI：奧特曼為什麼反對單一超級智慧">
+<meta name="twitter:description" content="Cheeky Pint 訪談：OpenAI 執行長 Sam Altman 為什麼寧可要一兆個略超人的 AI，也不要一個一兆 IQ 的 AI；沙箱、算力與代理的說法逐項對照官方資料。">
+<meta name="twitter:image" content="https://lushinshang.github.io/sam-altman-single-superintelligence/images/og-hero.jpg">
+<meta property="og:url" content="https://lushinshang.github.io/sam-altman-single-superintelligence/">
+<style>
+:root{
+  --bg:#f9f7f4; --surface:#fffdf9; --ink:#1a1a1a; --muted:#5f5b54; --line:#e4dfd6;
+  --accent:#0f7b6c; --accent-ink:#0b5c51; --note:#f0ebe1; --code:#ece6d8; --link:#1f5f99;
+  --card:#fff6e8; --card-line:#e8c99a; --shadow:0 6px 24px rgba(40,30,10,.08);
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#1b1a18; --surface:#26241f; --ink:#ece8de; --muted:#aaa497; --line:#3a3730;
+    --accent:#4fc1ad; --accent-ink:#7fd6c6; --note:#2f2c25; --code:#33302a; --link:#8fbde8;
+    --card:#2d2820; --card-line:#5b4a30; --shadow:0 6px 24px rgba(0,0,0,.35);}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);overflow-x:hidden;
+  font:17px/1.7 "Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;letter-spacing:0}
+.skip{position:absolute;left:-999px;top:0;background:var(--accent);color:#fff;padding:8px 14px;z-index:300}
+.skip:focus{left:8px;top:8px}
+nav.toc{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 92%,transparent);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav.toc ul{list-style:none;margin:0 auto;padding:0 16px;max-width:1120px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;min-height:52px;align-items:center}
+nav.toc ul::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:8px 12px;border-radius:999px;color:var(--muted);text-decoration:none;font-size:14px;min-height:36px}
+nav.toc a:hover,nav.toc a:focus-visible{background:var(--note);color:var(--ink)}
+a{color:var(--link);overflow-wrap:anywhere}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.page{max-width:1120px;margin:0 auto;padding:0 20px 80px}
+header.hero{padding:56px 0 8px;text-align:center}
+.eyebrow{margin:0 0 8px;color:var(--accent-ink);font-weight:700;letter-spacing:0;font-size:14px}
+h1{margin:0 auto 14px;max-width:820px;font-size:clamp(1.7rem,1.2rem + 2vw,2.6rem);line-height:1.3;text-wrap:balance}
+.byline{margin:0 0 6px;color:var(--muted);font-size:14px}
+.video-link{margin:0 0 28px;font-size:14px}
+figure{margin:32px 0}
+figure img{display:block;width:100%;height:auto;aspect-ratio:var(--ar-d,16/9);object-fit:contain;border-radius:12px;
+  box-shadow:var(--shadow);background:var(--surface);cursor:zoom-in}
+@media (max-width:640px){figure picture img{aspect-ratio:var(--ar-m,9/16)}}
+@media (max-width:640px){figure.hero-figure picture img{max-width:300px;margin:0 auto}}
+figure.hero-figure{max-width:720px;margin-left:auto;margin-right:auto}
+hr{border:0;border-top:1px solid var(--line);margin:40px 0}
+p.figcap{margin:-18px auto 1.4em;text-align:center;font-size:14px;color:var(--muted)}
+figcaption{margin:10px auto 0;max-width:720px;font-size:14px;line-height:1.55;color:var(--muted);text-align:center}
+article{max-width:720px;margin:0 auto}
+article figure.section-figure{margin-left:50%;transform:translateX(-50%);width:min(860px,calc(100vw - 32px))}
+h2{margin:56px 0 12px;font-size:1.55rem;line-height:1.4;scroll-margin-top:72px;text-wrap:balance;
+  border-left:5px solid var(--accent);padding-left:14px;margin-left:-19px}
+h3{margin:36px 0 8px;font-size:1.2rem;line-height:1.45}
+p{margin:0 0 1.1em}
+ul,ol{margin:0 0 1.2em;padding-left:1.4em}
+li{margin:.35em 0}
+strong{font-weight:700}
+code{background:var(--code);padding:.1em .4em;border-radius:5px;font:0.9em ui-monospace,SFMono-Regular,Menlo,monospace;word-break:break-word}
+section.summary-card{background:var(--card);border:1px solid var(--card-line);border-radius:14px;padding:6px 22px 10px;margin:24px 0 8px;box-shadow:var(--shadow)}
+section.summary-card h2{margin:14px 0 8px;font-size:1.2rem;border-left:0;padding-left:0;margin-left:0}
+section.summary-card p{margin:0 0 .8em;font-size:16.5px}
+ol.takeaways{padding-left:1.6em}
+ol.takeaways li{margin:.8em 0;padding-left:.2em}
+ol.takeaways li::marker{color:var(--accent-ink);font-weight:700}
+ul.sources li{overflow-wrap:anywhere}
+aside.note{background:var(--note);border-left:4px solid var(--accent);border-radius:8px;padding:12px 16px;margin:0 0 1.6em;font-size:15px;color:var(--ink)}
+aside.note p,aside.note ul{margin:0 0 .6em}
+aside.note ul{padding-left:1.3em}
+figure.diagram{margin:28px 0}
+.mermaid-scroll{overflow-x:auto;max-width:100%;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px;-webkit-overflow-scrolling:touch}
+.mermaid-scroll pre{margin:0;font:14px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre;color:var(--ink)}
+.mermaid-scroll svg{display:block;margin:0 auto;height:auto;max-width:100%}
+.table-scroll{overflow-x:auto;margin:0 0 1.6em;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.table-scroll table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px;line-height:1.55}
+.table-scroll th,.table-scroll td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.table-scroll th{background:var(--note);font-weight:700}
+.table-scroll tr:last-child td{border-bottom:0}
+.table-scroll td.k{font-weight:600;white-space:nowrap}
+.table-scroll td.nw{white-space:nowrap}
+.table-scroll.wide{margin-left:50%;transform:translateX(-50%);width:min(1040px,calc(100vw - 32px))}
+@media (max-width:640px){.table-scroll.wide{margin-left:0;transform:none;width:auto}}
+@media (max-width:640px){
+  .table-scroll{overflow-x:visible}
+  .table-scroll table{min-width:0}
+  .table-scroll thead{position:absolute;left:-9999px}
+  .table-scroll tr,.table-scroll td{display:block}
+  .table-scroll tr{padding:10px 12px;border-bottom:1px solid var(--line)}
+  .table-scroll tr:last-child{border-bottom:0}
+  .table-scroll td{padding:2px 0;border:0}
+  .table-scroll td.k{color:var(--accent-ink);white-space:normal}
+  .table-scroll td.nw{white-space:normal}
+  .table-scroll td::before{content:attr(data-label) "：";font-weight:700;color:var(--muted);font-size:13px}
+}
+
+p.lede{margin:0 auto 10px;max-width:760px;color:var(--muted);font-size:16px;line-height:1.65}
+footer{max-width:720px;margin:64px auto 0;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+.lightbox{display:none;position:fixed;inset:0;z-index:200;background:rgba(20,18,14,.9);align-items:center;justify-content:center;padding:24px}
+.lightbox.is-open{display:flex}
+.lightbox img{max-width:96vw;max-height:90vh;width:auto;height:auto;border-radius:8px;box-shadow:0 12px 48px rgba(0,0,0,.5);background:#fff}
+.lightbox button{position:absolute;top:14px;right:14px;min-width:44px;min-height:44px;padding:8px 14px;border:0;border-radius:999px;
+  background:#fff;color:#222;font-size:15px;cursor:pointer}
+@media (max-width:760px){
+  h2{margin-left:0;border-left:0;padding-left:0;border-top:3px solid var(--accent);padding-top:10px}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .page{padding:0 16px 64px}
+  header.hero{padding-top:36px}
+  h2{font-size:1.35rem}
+  section.summary-card{padding:4px 16px 8px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<nav class="toc" aria-label="章節導覽"><ul><li><a href="#sec-1" title="三十秒版">三十秒</a></li><li><a href="#sec-2" title="先看重點：訪談中的說法，查得到什麼">重點</a></li><li><a href="#sec-3" title="把日期排在一起看">日期</a></li><li><a href="#sec-4" title="一、PHP 週：漏洞是誰找到的">一·PHP</a></li><li><a href="#sec-5" title="二、三道防線，最後都押在對齊">二·沙箱</a></li><li><a href="#sec-6" title="三、一兆個略超人：說了什麼，沒說什麼">三·一兆個</a></li><li><a href="#sec-7" title="四、設上限，也放手失控一週">四·上限</a></li><li><a href="#sec-8" title="五、算力、晶片與每 GW 的帳">五·算力</a></li><li><a href="#sec-9" title="六、個人 agent 與 token 計價">六·計價</a></li><li><a href="#sec-10" title="讀這場訪談要記得的限制">限制</a></li><li><a href="#sec-11" title="重點結論與實際啟示">結論</a></li><li><a href="#sec-12" title="製作說明：這篇導讀由 AI 模型完成">製作說明</a></li><li><a href="#sec-13" title="來源清單">來源</a></li></ul></nav>
+<div class="page">
+<header class="hero">
+<p class="eyebrow">深度導讀</p>
+<h1>寧要一兆個略超人的 AI：奧特曼為什麼反對單一超級智慧</h1>
+<p class="lede">Cheeky Pint 訪談導讀：沙箱只撐得到某處，他把希望放在很多個互相制衡的 AI；同一場訪談裡，他也說過放手讓算力失控一週</p>
+<p class="byline">整理：2026-10-29　資料截至 2026-10-29</p>
+</header>
+<main id="main"><article>
+<figure class="hero-figure"><picture><source media="(max-width: 640px)" srcset="images/hero-9x16.webp"><img src="images/hero-16x9.webp" alt="左側一座孤立的巨大深色石碑，右側是夜間的城鎮，由無數亮著燈的小窗與彼此相連的細線組成" width="1672" height="941" loading="eager" style="--ar-d:1672/941;--ar-m:941/1672" tabindex="0" role="button" aria-label="放大圖片：左側一座孤立的巨大深色石碑，右側是夜間的城鎮，由無數亮著燈的小窗與彼此相連的細線組成"></picture><figcaption>圖說：AI 生成的概念插畫，比喻兩種未來：一個巨大而孤立的單一智慧，對上由眾多個體互相連結、彼此制衡的社會。</figcaption></figure>
+<aside class="note"><p>本導讀的分析與撰稿由 AI 模型完成，不是人類分析，也沒有經過人工逐句校稿。依據的是 YouTube 字幕與節目官方逐字稿，細節見文末〈製作說明〉。</p></aside>
+<p>訪談過了二十分鐘，主持人約翰・柯里森（John Collison）說兩人的啤酒已經喝掉半品脫。再過幾分鐘，他問 OpenAI 執行長山姆・奧特曼（Sam Altman），從安全的角度看，還有什麼讓他興奮。奧特曼說要把稍早提過的方向再強調一次；柯里森替他總結之後，他講出這集節目的標題：「我直覺上更寧願有一兆個智慧略為超越人類的 AI 加入社會，也不要一個智商（IQ）一兆的 AI 加入社會」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1453s" target="_blank" rel="noopener noreferrer">24:13</a>）。</p>
+<p>八分多鐘後，這位前沿模型公司的執行長把話講得更具體：「至少有一陣子——也許是很長一陣子——我們得同意設下一些限制，限制我們讓這些單一模型聰明到什麼程度」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1962s" target="_blank" rel="noopener noreferrer">32:42</a>）。</p>
+<p>同一場訪談稍早，他也說過：「我們確實曾有一個禮拜在數學上放任它失控」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=969s" target="_blank" rel="noopener noreferrer">16:09</a>），而且是刻意的。他主張迭代式部署、反對把能力囤在實驗室裡，鼓勵研究員在可能性的極限邊緣探索。</p>
+<p>一個認為單一模型得設上限的人，怎麼同時主張放手？他反對單一超級智慧的理由，站得住多少？</p>
+<section class="summary-card" aria-labelledby="sec-1">
+<h2 id="sec-1">三十秒版</h2>
+<ul><li>奧特曼反對單一超級智慧，起點是沙箱：<strong>沙箱有效到某個程度，監控再往前一點，最後都得靠「模型真的對齊」</strong>。怎麼確認對齊，訪談裡沒有答案。</li><li>「一兆個略超人的 AI」是他自己標明為直覺的價值選擇，類比的是社會靠很多人互相制衡。<strong>數量多不代表彼此獨立，也不代表權力分散</strong>，這兩點訪談沒有處理。</li><li>「單一模型要設上限」只有一段話，帶著「我有點認為」「至少有一陣子」的保留；誰訂、量什麼、怎麼查都沒說。他也直說，進展若因此停下來，是這個決定造成的。對算力投入與探索，他在別處主張放手。</li><li>訪談順口提到的 PHP 漏洞、Navier–Stokes、七百多份手稿、每 GW 成本與 token 計價，多半要打折讀，逐項狀態見下表。</li></ul>
+</section>
+<h2 id="sec-2">先看重點：訪談中的說法，查得到什麼</h2>
+<div class="table-scroll" tabindex="0" role="region" aria-label="表格（可左右捲動）"><table><thead><tr><th scope="col">訪談中的說法</th><th scope="col">查證結果</th><th scope="col">狀態</th></tr></thead><tbody><tr><td data-label="訪談中的說法">PHP 週：模型找出大量 PHP 漏洞；「為什麼花了 20 年」（00:12–00:52）</td><td data-label="查證結果">Calif 用 GPT‑5.6 Sol 找出一項，Wiz 獨立通報兩項；「20 年」查無來源，最早影響 2012 年的 PHP 5.4</td><td class="nw" data-label="狀態">歸屬有爭議</td></tr><tr><td data-label="訪談中的說法">大家在 Cyber Blue 上的進展（07:38）</td><td data-label="查證結果">查不到名為 Cyber Blue 的官方產品；最接近的是 8 月公布的 Daybreak Blue</td><td class="nw" data-label="狀態">名稱有爭議</td></tr><tr><td data-label="訪談中的說法">最近的 Navier–Stokes 證明（16:26）</td><td data-label="查證結果">OpenAI 9 月宣稱有爆破解並附 Lean 形式化；Clay 仍在評估；10 月預印本指兩版本不一致</td><td class="nw" data-label="狀態">有爭議</td></tr><tr><td data-label="訪談中的說法">Navier–Stokes 約 1,000 萬美元；數學整體「數億美元」（18:04–18:26）</td><td data-label="查證結果">千萬美元與 OpenAI 研究人員、外部估計同量級；「數億」是柯里森先說，查無佐證</td><td class="nw" data-label="狀態">部分有佐證</td></tr><tr><td data-label="訪談中的說法">「比那 700 個證明更多」（18:32）</td><td data-label="查證結果">10-06 公布 722 份手稿，隔日撤回 3 份、修訂 14 份；未經獨立驗證</td><td class="nw" data-label="狀態">已確認</td></tr><tr><td data-label="訪談中的說法">數學界群情激憤（19:48，柯里森原話是 &quot;Mathematicians Union&quot;）</td><td data-label="查證結果">指 AHM 10-07 聲明，呼籲停止與 OpenAI 合作；也有數學家讚揚</td><td class="nw" data-label="狀態">用詞不精確</td></tr><tr><td data-label="訪談中的說法">你們幾週前推出 Dots（40:29）</td><td data-label="查證結果">OpenAI 9-29 發表常駐個人 agent「dots」，由 GPT-6 Astra 驅動，逐步推出</td><td class="nw" data-label="狀態">已確認</td></tr><tr><td data-label="訪談中的說法">每 GW 五年總持有成本，「挑 700 億美元」（38:58）</td><td data-label="查證結果">他自己挑的示意數字；公開估計多為建置成本口徑</td><td class="nw" data-label="狀態">示意數字</td></tr><tr><td data-label="訪談中的說法">記憶體廠每家一年約 1,000 億美元自由現金流（28:09）</td><td data-label="查證結果">美光 FY2026 調整後自由現金流約 620 億美元；三星、SK 海力士只公布營業利益</td><td class="nw" data-label="狀態">量級合理</td></tr><tr><td data-label="訪談中的說法">差點不以 token 計價下一個模型（49:51）；Codex 掛掉的內部事故（03:52）</td><td data-label="查證結果">都查無官方或媒體紀錄；狀態頁的 Codex 故障對不上這一次</td><td class="nw" data-label="狀態">單一來源</td></tr></tbody></table></div>
+<h2 id="sec-3">把日期排在一起看</h2>
+<div class="table-scroll" tabindex="0" role="region" aria-label="表格（可左右捲動）"><table><thead><tr><th scope="col">日期（2026）</th><th scope="col">事件</th><th scope="col">來源</th></tr></thead><tbody><tr><td class="k" data-label="日期（2026）">06-24</td><td data-label="事件">OpenAI 與 Broadcom 發表自研晶片 Jalapeño</td><td data-label="來源"><a href="https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/" target="_blank" rel="noopener noreferrer">TechCrunch</a></td></tr><tr><td class="k" data-label="日期（2026）">07-30</td><td data-label="事件">Calif 開始稽核 PHP</td><td data-label="來源"><a href="https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/" target="_blank" rel="noopener noreferrer">PHP Foundation</a></td></tr><tr><td class="k" data-label="日期（2026）">08-10</td><td data-label="事件">OpenAI 公布 Daybreak Blue 與 Daybreak Red</td><td data-label="來源"><a href="https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/" target="_blank" rel="noopener noreferrer">OpenAI</a></td></tr><tr><td class="k" data-label="日期（2026）">09-08</td><td data-label="事件">OpenAI 宣布 Navier–Stokes 成果</td><td data-label="來源"><a href="https://openai.com/index/navier-stokes-solution/" target="_blank" rel="noopener noreferrer">OpenAI</a>、<a href="https://www.quantamagazine.org/ai-has-solved-one-of-maths-1-million-millennium-prize-problems-20260908/" target="_blank" rel="noopener noreferrer">Quanta</a></td></tr><tr><td class="k" data-label="日期（2026）">09-11</td><td data-label="事件">Clay 數學研究所發表聲明，評估程序尚未完成</td><td data-label="來源"><a href="https://www.claymath.org/news/navier-stokes-announcement/" target="_blank" rel="noopener noreferrer">Clay</a></td></tr><tr><td class="k" data-label="日期（2026）">09-29</td><td data-label="事件">OpenAI 發表 dots</td><td data-label="來源"><a href="https://openai.com/index/introducing-dots/" target="_blank" rel="noopener noreferrer">OpenAI</a></td></tr><tr><td class="k" data-label="日期（2026）">10-06</td><td data-label="事件">OpenAI 公布 722 份數學手稿；同日 arXiv 預印本質疑 Navier–Stokes 的 Lean 版與文字版不一致</td><td data-label="來源"><a href="https://openai.com/index/sharing-ai-progress-in-mathematics/" target="_blank" rel="noopener noreferrer">OpenAI</a>、<a href="https://arxiv.org/abs/2610.08144" target="_blank" rel="noopener noreferrer">arXiv</a></td></tr><tr><td class="k" data-label="日期（2026）">10-07</td><td data-label="事件">AHM 發表聲明；OpenAI 撤回 3 份手稿、修訂 14 份</td><td data-label="來源"><a href="https://www.ahmath.org/statements" target="_blank" rel="noopener noreferrer">AHM</a>、<a href="https://github.com/openai/math/blob/main/history.md" target="_blank" rel="noopener noreferrer">openai/math 修訂紀錄</a></td></tr><tr><td class="k" data-label="日期（2026）">10-21</td><td data-label="事件">PHP 公布修補（CVE-2026-109618、CVE-2026-109619）；OpenAI 發表協調揭露公告</td><td data-label="來源"><a href="https://www.php.net/archive/2026.php#2026-10-21-5" target="_blank" rel="noopener noreferrer">php.net</a>、<a href="https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/" target="_blank" rel="noopener noreferrer">OpenAI</a></td></tr><tr><td class="k" data-label="日期（2026）">10-27</td><td data-label="事件">倫敦國王學院新聞稿：預印本尚未證明 OpenAI 的原證明有誤</td><td data-label="來源"><a href="https://www.kcl.ac.uk/news/openais-navier-stokes-proof-called-into-question" target="_blank" rel="noopener noreferrer">KCL</a></td></tr><tr><td class="k" data-label="日期（2026）">10-29</td><td data-label="事件">Cheeky Pint 訪談上架</td><td data-label="來源"><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY" target="_blank" rel="noopener noreferrer">YouTube</a>、<a href="https://cheekypint.substack.com/p/why-sam-altman-is-against-a-single" target="_blank" rel="noopener noreferrer">官方逐字稿</a></td></tr></tbody></table></div>
+<p>節目沒有寫錄製日期。奧特曼說 PHP 那件事的「第一天」大約是 10 天前；若指 10-21 公開修補，推 10 天已晚於上架日，只能當口語概數。PHP 稽核、Daybreak、Navier–Stokes、數學手稿與 dots，大約都在播出前三個月內；晶片 Jalapeño（06-24）與機器人團隊重啟（5 月底）早一些。講者談的多半是還沒有定論的事。</p>
+<h2 id="sec-4">一、PHP 週：漏洞是誰找到的</h2>
+<p>節目的第一個問題就是 PHP 週：「我想聊聊 PHP 週」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=12s" target="_blank" rel="noopener noreferrer">00:12</a>）。柯里森問為什麼要花這麼久才找到這些漏洞，奧特曼反問：「你是指為什麼花了 20 年，還是為什麼花了過去這幾個月？」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=22s" target="_blank" rel="noopener noreferrer">00:22</a>）這個「20 年」查不到出處；發現者說漏洞最早回溯到 2012 年的 PHP 5.4，約 14 年。</p>
+<p>奧特曼說，模型找漏洞的能力持續快速變強，大家之前也沒真的拿它去掃網路上那麼多程式碼。他預期：「我認為我們會發現，身處的這個世界裡嚴重漏洞的數量遠遠超出我們的預期」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=52s" target="_blank" rel="noopener noreferrer">00:52</a>）。</p>
+<p>這段對話給人的印象，是 OpenAI 的模型一週內掃出一批 PHP 漏洞。OpenAI 10 月 21 日的公告寫的是：資安公司 Calif 在 Patch the Planet 計畫中用 GPT‑5.6 Sol 找出一項重大漏洞，Wiz 獨立發現並通報了兩項；OpenAI 的角色是帶領維護者、研究人員與資安服務商組成的聯盟。PHP Foundation 的時間線是：7 月 30 日 Calif 開始稽核，8 月 11 日通報可遠端執行程式碼的問題，8 月 24 日 Wiz、9 月 18 日 OpenAI 各自提供其他攻擊途徑，10 月 21 日修補。它也說 7 月 1 日以來共發布 15 個 CVE，沒說全是 AI 找到的。</p>
+<p><strong>模型確實參與了，但「PHP 週」背後是將近三個月、好幾方人馬的工作。</strong>OpenAI 公告說「據我們所知」前沿 AI 比攻擊者更早發現這些漏洞，這是廠商自述。</p>
+<p>奧特曼自己很保留。「在 PHP 這件事上，我完全不想宣布勝利，因為我仍然不認為我們已經知道結果」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=462s" target="_blank" rel="noopener noreferrer">07:42</a>），「而且我預期會有一些壞事發生」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=467s" target="_blank" rel="noopener noreferrer">07:47</a>）。他說公開後的第一天比預期順利，還聽說有公司「要把我的東西下線一小時」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=489s" target="_blank" rel="noopener noreferrer">08:09</a>），用模型掃描後再上線，這是他的轉述。</p>
+<p>引出這段的是柯里森的提問：「大家在 Cyber Blue 上的進展有多快？」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=458s" target="_blank" rel="noopener noreferrer">07:38</a>）。查不到名為 Cyber Blue 的官方產品，最接近的是 8 月 10 日公布、給經核准防禦者使用的 Daybreak Blue。兩者是否同一件事，節目沒有說，奧特曼的回答也一路講回 PHP。</p>
+<p>他還轉述資安專家的擔憂：「他們只是不再確信我們在威脅模型中納入了正確的假設」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=506s" target="_blank" rel="noopener noreferrer">08:26</a>）。如果硬體漏洞真的像大家以為的那麼難，防禦還算有數；如果 AI 會找到需要新物理才能理解的硬體漏洞，「那麼我想，大家就無法確定會發生什麼事了」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=531s" target="_blank" rel="noopener noreferrer">08:51</a>）。</p>
+<h2 id="sec-5">二、三道防線，最後都押在對齊</h2>
+<p>話題轉到沙箱。先講清楚歸屬：對沙箱悲觀的是柯里森。他說跟 OpenAI 和類似公司裡非常懂行的人聊過，「基本上存在一種對沙箱隔離是否可行的悲觀情緒」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=544s" target="_blank" rel="noopener noreferrer">09:04</a>），他原本以為能替模型造一座最高戒護監獄。</p>
+<p>奧特曼沒有直接附和。他先說：「首先，我認為我們可以做得比現在好得多」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=576s" target="_blank" rel="noopener noreferrer">09:36</a>），眼下最該專注的就是更好的安全模型。他懷疑的是沙箱對遠超人類的模型還管不管用：「如果你想像一個理論上的 AI，比最聰明的資安研究人員還要聰明上一百萬倍——你真的會願意信任那個沙箱嗎？」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=586s" target="_blank" rel="noopener noreferrer">09:46</a>）</p>
+<p>柯里森插話說可以用模型蓋沙箱，奧特曼說等一下再談，先排出三道防線：「我認為沙箱隔離在一定程度上是管用的」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=608s" target="_blank" rel="noopener noreferrer">10:08</a>），「然後我認為監控可以發揮更進一步的作用」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=611s" target="_blank" rel="noopener noreferrer">10:11</a>）。監控指看模型的思維鏈，加上啟動值監控（activation monitoring），直接看模型內部的運算狀態，確認它沒有在騙人。再往後，「最終，我認為你必須抱持極大的信心，相信模型真正做到了對齊」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=624s" target="_blank" rel="noopener noreferrer">10:24</a>），對齊到會忠實遵循操作者的意圖，並且永遠重視由人類掌控未來。</p>
+<p>回到柯里森的提議，他說如果有一個你百分之百確定對齊的模型，「那麼是的，我認為你可以讓它協助你打造越來越好的沙箱」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=652s" target="_blank" rel="noopener noreferrer">10:52</a>）。最後他說：「因為你必須非常、非常信任其對齊，才能相信沙箱能一直領先其能力」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=672s" target="_blank" rel="noopener noreferrer">11:12</a>）。</p>
+<figure class="diagram"><div class="mermaid-scroll" tabindex="0" role="group" aria-label="流程圖（可左右捲動）"><pre class="mermaid">flowchart TD
+    A[&quot;沙箱隔離&quot;] --&gt;|撐不住時交給| B[&quot;監控：思維鏈與啟動值&quot;]
+    B --&gt;|最後靠| C[&quot;相信模型真的對齊&quot;]
+    C -.-&gt;|完全信任對齊之後| D[&quot;讓模型幫忙蓋更好的沙箱&quot;]
+    D -.-&gt; A</pre></div><figcaption>圖說：本文歸納，非講者原圖。實線是他排出的三道防線；虛線是要先完全信任對齊才走得通的那條回路。</figcaption></figure>
+<p>沙箱撐不住的地方交給監控；監控要判斷模型有沒有說謊，靠的是看它自己的思維鏈與內部狀態，<strong>模型越強，越難保證看到的是真的。</strong>用模型蓋沙箱這條路也一樣，前提是先完全信任它的對齊。</p>
+<aside class="note"><p>重點：三道防線裡，前兩道的保證最後都借自第三道，而第三道要怎麼驗證到「極大的信心」，訪談裡沒有說。</p></aside>
+<p>奧特曼對比人類聰明一百萬倍的東西直接說「我不知道」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=664s" target="_blank" rel="noopener noreferrer">11:04</a>），沒有假裝有解。下一節關於「很多個 AI」的論點，就是從這個沒有解的地方出發。</p>
+<p>柯里森又丟出一個點子：「難道不能給模型競爭性的誘因，並給予它們相互背叛的誘因嗎？」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=680s" target="_blank" rel="noopener noreferrer">11:20</a>）奧特曼回應「我認為這是一個很有前景的方向」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=685s" target="_blank" rel="noopener noreferrer">11:25</a>）。他兩度用「我猜想」起頭，第一次話沒說完，就岔去說他討厭 agent swarms（代理群）這個詞，要改叫 agent teams（代理團隊）；第二次是：「我猜想代理團隊具有非常有趣的擴展定律特性，但在對齊特性上也有變異性」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=698s" target="_blank" rel="noopener noreferrer">11:38</a>），值得從能力與安全兩方面一起推進。</p>
+<h2 id="sec-6">三、一兆個略超人：說了什麼，沒說什麼</h2>
+<p>談完數學，柯里森問安全方面還有什麼讓他興奮，奧特曼回到代理群，這次自己改口用 swarms。他的論點是一個類比：「我確實認為代理群的特性，非常符合社會韌性或社會強健性的許多特性」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1399s" target="_blank" rel="noopener noreferrer">23:19</a>），而這正是「單一次推演、單一大腦的世界版本」缺少的（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1410s" target="_blank" rel="noopener noreferrer">23:30</a>）。社會有很多深刻的缺陷，卻非常強健，「如果沒有很多人互相制衡與合作，這是不可能發生的」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1423s" target="_blank" rel="noopener noreferrer">23:43</a>），背後是多元主義與民主的價值。他說原本有點難過，以為 AI 會往反方向走，現在對這個方向感到興奮。</p>
+<p>柯里森替他做了總結：不會走向中心化，因為會有很多代理，「而代理在動態均衡中互相抗衡」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1446s" target="_blank" rel="noopener noreferrer">24:06</a>），「攻防就是一個很好的例子」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1450s" target="_blank" rel="noopener noreferrer">24:10</a>）。<strong>「動態均衡」與「攻防」是柯里森的詮釋</strong>，奧特曼沒有接這兩個詞，回的是那句一兆個 AI。柯里森追問是否正往多個 AI 的方向走，奧特曼說這些都得努力爭取：「我認為很多人對它應該如何使用，以及什麼是世界的最佳樣貌，可能會有不同的看法」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1480s" target="_blank" rel="noopener noreferrer">24:40</a>），「但，這是我認為正確的樣貌」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1487s" target="_blank" rel="noopener noreferrer">24:47</a>）。</p>
+<p>這段話的性質，奧特曼自己標好了：直覺上的偏好、他認為對的未來，也承認別人可以不同意。<strong>這是價值選擇，拿社會當類比，沒有給出機制。</strong>類比要成立，得先滿足幾個條件。下面四點是本文的分析，每一點都可以被具體證據推翻。</p>
+<p>第一，同一個模型複製一萬份，比較像一個人照了一萬次鏡子。社會能互相制衡，是因為每個人的經驗、利益、錯誤都不一樣。奧特曼稍早說可以把一整個團隊投入一個問題，「而且你可以平行進行 10,000 次」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=814s" target="_blank" rel="noopener noreferrer">13:34</a>）。如果這些代理出自同一個基礎模型，盲點很可能也一樣。「對齊特性上也有變異性」可以讀成好消息（不會全部一起錯），也可以讀成壞消息（團隊裡有一個沒對齊的成員）；誰負責挑出偏離的那一個，訪談沒有說。要推翻這一點，需要有研究顯示同一模型的多代理組態，失誤之間真的夠獨立。</p>
+<p>第二，AI 的數量多，不代表握有權力的人多。一兆個 AI 是實例的數量，誰擁有、誰部署、跑在誰的雲端是另一回事。同一場訪談裡，奧特曼說，從全球配置的角度看，讓每個人在自己電腦裡放一堆 DRAM 是很糟的配置，「如果你試圖應對這種供應極度受限的環境，你會希望在雲端達到最高的利用率」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1776s" target="_blank" rel="noopener noreferrer">29:36</a>）；OpenAI 也在做自己的晶片與資料中心。這段談的是記憶體吃緊時的硬體配置，跟 AI 實例原本是兩回事，但並讀可見，實例多元與控制集中可以並存。要推翻這一點，需要看到代理實際上分散在很多家供應商、由很多方擁有與部署。</p>
+<p>第三，限制單一模型，風險可能只是換了位置。如果代理團隊真的有「非常有趣的擴展定律特性」，又能平行一萬次，整個團隊加起來的有效能力，可能超過被限制的那個單一模型。團隊整體要不要也有上限，訪談沒有碰。</p>
+<p>第四，柯里森說的攻防均衡，前提是攻守兩方能力大致相當、出錯了還能修。奧特曼在第一節轉述資安專家的話，說大家已經不確定威脅模型的假設是否成立，這正好削弱了均衡的前提。</p>
+<aside class="note"><p>重點：從「社會靠制衡維持強健」走到「很多個 AI 比較安全」，中間至少要補上獨立性、所有權、團隊上限這幾塊，訪談裡都還是空的。</p></aside>
+<h2 id="sec-7">四、設上限，也放手失控一週</h2>
+<p>談資安時他先自我批評：「我認為我們並沒有向人們好好解釋清楚，為什麼我們覺得這項技術所有潛在的負面影響都是值得承擔的」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=333s" target="_blank" rel="noopener noreferrer">05:33</a>）。他形容大眾聽到的版本是：AI 也許能治癌症，但自己會丟掉工作、失去對未來的掌控，還得有一個監控國家才不會全滅，評語是「這是一套糟糕的行銷說詞」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=384s" target="_blank" rel="noopener noreferrer">06:24</a>）。他的解方是迭代式部署：「即使推動迭代式部署在 AI 安全社群中極不受歡迎」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=388s" target="_blank" rel="noopener noreferrer">06:28</a>），OpenAI 仍堅守把工具交到大眾手中的原則，因為不該是「讓一群坐在舊金山幾平方英里土地上的人替未來做出所有決定」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=418s" target="_blank" rel="noopener noreferrer">06:58</a>）。</p>
+<p>迭代式部署寫在 OpenAI 的官方安全原則裡，2023 年的〈Planning for AGI and beyond〉也有同義表述；「極不受歡迎」是奧特曼自己的評價。柯里森把它概括成「把進展放出去，不能悶在政府裡」，奧特曼修正說也不是全部，「在把它們放出去之前，你依然必須確保它們是安全的」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=436s" target="_blank" rel="noopener noreferrer">07:16</a>），但「累積能力懸置（capability overhang）是應該對抗的事」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=440s" target="_blank" rel="noopener noreferrer">07:20</a>）。能力懸置指能力做出來卻壓著不放，一次放出時社會來不及調適。</p>
+<p>談算力時，他的態度更明顯。他說最會用 AI 的人和一般人的落差「只是一直在擴大、擴大、再擴大」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=838s" target="_blank" rel="noopener noreferrer">13:58</a>）。柯里森問怎麼控制代理的花費，奧特曼說可以在提示詞裡寫，「如果你說用 10,000 美元的算力盡你所能做到最好」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=882s" target="_blank" rel="noopener noreferrer">14:42</a>），它會理解。<strong>這是請 agent 自己節制，跟帳單上設硬上限不同。</strong></p>
+<p>OpenAI 內部的規矩：「我們盡量從不因為員工消耗大量算力而獎勵他們」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=929s" target="_blank" rel="noopener noreferrer">15:29</a>），沒有 token 排行榜，「但預設態度是懷疑的」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=939s" target="_blank" rel="noopener noreferrer">15:39</a>），能證明做了重要的事就只會得到讚賞。柯里森追問：一千萬美元的數學還好，一億、十億呢？奧特曼在這裡說出那句「我們確實曾有一個禮拜在數學上放任它失控」，理由是「在你嘗試之前，你不知道它能走多遠」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=976s" target="_blank" rel="noopener noreferrer">16:16</a>）。他的原則是新典範出現時讓人相當不受拘束：「讓人們在可能性的極限邊緣探索」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1032s" target="_blank" rel="noopener noreferrer">17:12</a>），再相信最佳化的壓力會讓它變便宜。</p>
+<h3>Navier–Stokes 與七百多份手稿</h3>
+<p>他舉的例子是 Navier–Stokes。「當我們做納維—斯托克斯（Navier-Stokes）證明時，我們對代理團隊的擴展定律絕對是一無所知」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=986s" target="_blank" rel="noopener noreferrer">16:26</a>）：該給最聰明的模型嗎？很多副本還是少一點？推演要長還是短？現在「稍微明白了一點點」。他打賭一年後能用百分之一的成本重做一次。</p>
+<p>「證明」這個詞要打折。OpenAI 在 9 月 8 日宣稱，約一萬個代理、用未公開的內部模型，找到帶光滑外力的三維 Navier–Stokes 方程有限時間爆破解，附 166 頁手稿與 Lean 形式化，屬千禧年大獎難題的一種表述。Clay 數學研究所 9 月 11 日說問題「apparently settled」，但評估會刻意放慢，至今沒有認定。10 月 6 日，倫敦國王學院與劍橋的研究者發表預印本（未經同儕審查），指 Lean 版與文字版並不完全一致；國王學院 10 月 27 日的新聞稿則說，這還不能證明原證明有錯。另有一樁優先權爭議未結案。<strong>比較準確的說法是：OpenAI 宣稱並附上形式化證明，評估與質疑都還沒有結論。</strong></p>
+<p>花費方面，奧特曼說「大概是 1,000 萬美元的量級」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1084s" target="_blank" rel="noopener noreferrer">18:04</a>），又補「也許稍微多一點」。OpenAI 研究人員公開說的是數百萬美元，外部估計約 1,000 萬到 1,500 萬，量級對得上。柯里森補了一句：「但大概是數億美元規模的數學」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1102s" target="_blank" rel="noopener noreferrer">18:22</a>），奧特曼答「對」，並說「但那包含的其他發現，遠多於我們已經發表的」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1106s" target="_blank" rel="noopener noreferrer">18:26</a>）。「數億」是主持人先說的，查無佐證，本文不當成數字。</p>
+<p>柯里森問還有比那 700 個證明更多的嗎，奧特曼說：「有的。當然。」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1115s" target="_blank" rel="noopener noreferrer">18:35</a>）OpenAI 10 月 6 日公布的是 722 份手稿、372 組問題；隔天撤回 3 份、修訂 14 份，約半數附 Lean 形式化，儲存庫之後改列 721 份、373 組。<strong>這些是還沒有經過獨立驗證的手稿。</strong>至於「還有更多」，公開資料只看得出嘗試過的題目遠多於發表的，看不出有多少已解出未公開。</p>
+<p>奧特曼說這是真正的兩難。一邊，「全人類都應當享有基礎知識」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1123s" target="_blank" rel="noopener noreferrer">18:43</a>），「我們不應該私藏重大的基礎科學發現」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1130s" target="_blank" rel="noopener noreferrer">18:50</a>）；另一邊，科學家的職涯與成就感來自發現本身。柯里森說他覺得奧特曼太自責了，大家都看到 &quot;Mathematicians Union&quot; 群情激憤（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1188s" target="_blank" rel="noopener noreferrer">19:48</a>）。</p>
+<p>沒有這樣一個工會。主要的反彈來自 Association for Human Mathematics（AHM）10 月 7 日的聲明：一次釋出 700 多份檔案是 &quot;a demonstration of power&quot;（權力的展示），呼籲數學家停止與 OpenAI 合作。Terence Tao 在部落格轉載了這份聲明，署名是 AHM，不是 Tao 本人的話。也有數學家公開讚揚。AHM 批評的正是「一次傾倒」與沒有跟社群協作，跟奧特曼「不該私藏」的理由正面相撞。</p>
+<p>奧特曼說他想找一種方式，「能盡可能體貼數百年來推動這些領域前進的社群」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1218s" target="_blank" rel="noopener noreferrer">20:18</a>）。他又說「我其實大概不該說這個，但我還是說吧，既然我們都在喝酒了」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1250s" target="_blank" rel="noopener noreferrer">20:50</a>）：某個週末拿到新模型，內部頻道叫「Model Name-Hold My Beer」，最難的問題被一個接一個解掉，他連兩晚睡不著，也感到「遠超預期的悲傷與憂鬱，以及一種某種事物正在劃下句點的感覺」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1292s" target="_blank" rel="noopener noreferrer">21:32</a>）。頻道與那個週末都只有他的自述。</p>
+<h3>一段話的上限</h3>
+<p>訪談過了半小時，柯里森問 AI 做 AI 研究缺什麼。奧特曼說，缺的是在這個維度上更聰明的模型；柯里森接話：也就是高層規劃與概念推理。奧特曼說：「我認為如果你把我們用來讓模型如此擅長數學的同一套流程應用到 AI 研究上，它大概會奏效」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1953s" target="_blank" rel="noopener noreferrer">32:33</a>）。緊接著：「我有點認為，至少有一陣子——也許是很長一陣子——我們得同意設下一些限制，限制我們讓這些單一模型聰明到什麼程度」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1962s" target="_blank" rel="noopener noreferrer">32:42</a>）。「但到時候進展停下來，會是那個決定造成的，而不是因為 AI 沒有能力做好研究」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1972s" target="_blank" rel="noopener noreferrer">32:52</a>）。</p>
+<p>程度詞要逐字看：「我有點認為」「至少有一陣子」「也許是很長一陣子」，這是帶著保留的看法。他說「根據我們這段對話稍早的部分」。稍早沒有明講要「限制」單一模型，最接近的是 24:13 那句寧要一兆個略超人的 AI、不要一個一兆 IQ 的 AI，以及沙箱的上限；從這個偏好走到「得同意設限」，是他在這裡才補上的一步。</p>
+<p>把這段跟他稍早主張放手燒算力、推進代理團隊並讀，可以讀出他想限制的是單一大腦，算力投入與探索照樣放手；這是本文的讀法，32:42 這段話本身沒有這樣說。</p>
+<p><strong>上限由誰訂、量什麼（參數？算力？評測分數？）、怎麼查核、其他實驗室不同意怎麼辦，訪談裡一句都沒有。</strong>他反對讓舊金山一小群人決定未來，但「我們得同意」裡的「我們」是誰，同樣沒交代。柯里森再問 OpenAI 內部做 AI 研究的流程，奧特曼承認目前「這是大量的實驗」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2076s" target="_blank" rel="noopener noreferrer">34:36</a>），未來三個月會學到很多。</p>
+<h2 id="sec-8">五、算力、晶片與每 GW 的帳</h2>
+<p>Stripe Atlas 業配（24:49–25:17）之後，柯里森問算力短缺的情況。奧特曼說會有非理性繁榮、破滅、緊縮與過剩，但趨勢是「我們始終就只是想要更多算力」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1547s" target="_blank" rel="noopener noreferrer">25:47</a>）。</p>
+<p>他列了 OpenAI 的準備：「我們製造了一款晶片，在每瓦智慧單位的效能表現上令人驚豔」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1564s" target="_blank" rel="noopener noreferrer">26:04</a>），也在學蓋資料中心、用機器人蓋資料中心。晶片是 6 月 24 日與 Broadcom 發表的推論晶片 Jalapeño，據 TechCrunch 報導，早期每瓦效能明顯較佳，仍在測試中；機器人團隊據二手報導在 5 月底重啟。讓 AI 控制機器人去運作晶圓廠、蓋渦輪機和資料中心的「自我複製的資料中心」，他說「我認為這在我們的掌握之中」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1599s" target="_blank" rel="noopener noreferrer">26:39</a>），目前只是願景，沒有公開的計畫或時程。</p>
+<p>記憶體那段是整場最有畫面的。柯里森說高價的解方就是高價，新廠商隨時會湧入；奧特曼說：「我認為看不見的手目前失靈了」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1647s" target="_blank" rel="noopener noreferrer">27:27</a>）。他說 DRAM 廠長期以來「會投入 200 億美元的資本支出（CapEx），換來 190 億美元」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1668s" target="_blank" rel="noopener noreferrer">27:48</a>），景氣起起落落，從來不是好生意；現在突然之間，「這些業者每家一年都要賺差不多 1,000 億美元的自由現金流」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1689s" target="_blank" rel="noopener noreferrer">28:09</a>），但他說這些廠商都記得蓋太多廠、差點破產的歷史；柯里森接話，所以他們的資本支出很保守。</p>
+<p>「200 億換 190 億」是口語概括。<strong>「每家約 1,000 億美元」量級合理，但只有美光對得上</strong>：FY2026 調整後自由現金流約 620 億美元，最新一季約 332 億，單季年化超過 1,000 億。三星與 SK 海力士只公布營業利益，不能直接對比。</p>
+<p>晶片方面，他說微影製程「我認為地球上似乎只有一家公司知道該怎麼做」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1851s" target="_blank" rel="noopener noreferrer">30:51</a>），沒有點名；晶片設計到送去投片（tape out）的檔案則是已經被透徹理解的問題，「對 AI 來說是個極佳的題目」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=1866s" target="_blank" rel="noopener noreferrer">31:06</a>）。全球的矽產能有限，所以「我們都有共同的利益」。</p>
+<h3>每 GW 的成本</h3>
+<p>柯里森問每 GW 的金額會升還是降，奧特曼說根本成本應該下降，隨即自己挑了一個數字：「目前人們以五年總持有成本衡量的每十億瓦（GW）成本給出了不同的數字」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2331s" target="_blank" rel="noopener noreferrer">38:51</a>），「我們挑 700 億美元作為一個數字」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2338s" target="_blank" rel="noopener noreferrer">38:58</a>）。柯里森確認是安裝成本，奧特曼補「再加上運轉五年」。他的立場是：「我認為如果那個數字是 200 億而不是 700 億，我們應該要高興得多」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2345s" target="_blank" rel="noopener noreferrer">39:05</a>），而且每年還要從更聰明的模型拿到 10 倍效能。</p>
+<p><strong>700 億美元是他挑來討論的示意數字，不是 OpenAI 的成本揭露。</strong>公開估計大約是每 GW 500 億到 1,000 億美元，但多半是建置成本或供應商營收口徑，不含五年的電力與營運，不能直接比。他也說，就算要降到 200 億，「也已經進入能源必須變得更便宜的範疇了」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2390s" target="_blank" rel="noopener noreferrer">39:50</a>），層層堆疊的毛利要大幅壓縮；就算原料全免費、沒人賺錢，以目前的能源條件也許做得到，「但也只是勉強做得到」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2417s" target="_blank" rel="noopener noreferrer">40:17</a>）。</p>
+<h2 id="sec-9">六、個人 agent 與 token 計價</h2>
+<p>回到商業，柯里森說個別工程師沒有硬性的預算上限，也許應該有。奧特曼先說明立場：「我這裡確實是在替自己的生意說話，而且我非常有偏見，但我真心相信這點」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2167s" target="_blank" rel="noopener noreferrer">36:07</a>），AI 不是公司最大的支出問題。柯里森說 Stripe 現在大約 1% 數量級的營運支出花在 token 上（這是他的自述），奧特曼回「那感覺太低了」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2203s" target="_blank" rel="noopener noreferrer">36:43</a>）。他的結論是：「我認為 AI 用得不夠的公司，比 AI 用得太多的公司更多」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2269s" target="_blank" rel="noopener noreferrer">37:49</a>）。</p>
+<p>柯里森提到「你們推出 Dots 到現在也有幾週了」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2429s" target="_blank" rel="noopener noreferrer">40:29</a>）。dots 是 OpenAI 9 月 29 日發表的常駐個人 agent，各有自己的雲端電腦。勝出的個人 agent 要具備什麼？「就像是：智慧、上下文、工具」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2443s" target="_blank" rel="noopener noreferrer">40:43</a>）。他說還沒有人做出像寫程式代理或 ChatGPT 那樣少不了的產品。未來的樣子會很像現在的 Dots、Meta 的 Muse 或 xAI 的 Grok Bot，差別是「但它就是能運作」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2492s" target="_blank" rel="noopener noreferrer">41:32</a>），「它會很可靠」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2495s" target="_blank" rel="noopener noreferrer">41:35</a>）。</p>
+<p>商家護城河那段，論點主要來自柯里森。他觀察到消費者想在慣用的聊天 App 裡直接退貨，商家卻怕失去控制權而不願意；他認為「你的競爭壁壘大概根本不是來自於你拼湊出 HTML 的能力」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2651s" target="_blank" rel="noopener noreferrer">44:11</a>）。奧特曼先說「我在這方面有偏見」，再說「但我大方向上非常認同你」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2675s" target="_blank" rel="noopener noreferrer">44:35</a>），舉自己的例子：在 ChatGPT 裡買東西，亞馬遜和其他賣家擺在一起，「10 次裡面 10 次我都會點亞馬遜」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2696s" target="_blank" rel="noopener noreferrer">44:56</a>），價格高也無所謂。他也說，或許可以說是 ChatGPT 給合作夥伴的平台還不夠好。</p>
+<p>網頁表單是柯里森的「新思維」：只要有網頁表單欄位要你親手填，「如今這種事根本不值得你親自動手」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2746s" target="_blank" rel="noopener noreferrer">45:46</a>），因為那些資訊你早就填過很多次。奧特曼的感想是：「如果再也不用在電腦前做虛工（fake work），我會無比開心」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2767s" target="_blank" rel="noopener noreferrer">46:07</a>）。柯里森說「任何網頁表單基本上都是虛工」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2772s" target="_blank" rel="noopener noreferrer">46:12</a>），奧特曼附和，說自己很早就裝過自動填姓名地址的外掛。agent 取代網頁表單，是主持人的觀察加上來賓的偏好，談不上 OpenAI 的產品宣示。</p>
+<p>最後一個話題是 token。柯里森說奧特曼討厭拿 token 當衡量指標。奧特曼說用成果計價也不行，各種使用情境差太多，接著講了一段內部故事：「我們差點做出一個非常——其實會是很糟的決定，說我們下一個模型完全不以 token 計價」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=2991s" target="_blank" rel="noopener noreferrer">49:51</a>），改成給提示詞、報價、做完寄帳單，像 AWS 一樣。「但客戶對此的反應非常負面」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=3009s" target="_blank" rel="noopener noreferrer">50:09</a>）。他又問過幾個人，對方寧可 token 被灌水、多付錢，也要一個知道背後是什麼的單位。<strong>這個決定最後沒有推出</strong>，整件事只有他的自述。</p>
+<p>柯里森拿晶片的奈米製程名稱來比，說名稱早已跟實際尺寸無關，問 token 會不會變成那樣。奧特曼說那種命名冒犯到他，又說「token 也算是一種虛構的單位」（<a href="https://www.youtube.com/watch?v=iMsUcCYNKqY&amp;t=3082s" target="_blank" rel="noopener noreferrer">51:22</a>）。放回整場訪談，這段有另一層意思（本文的類推，奧特曼沒有這樣連結）：客戶堅持要看得見的單位，是怕長期被坑；要替「單一模型能多聰明」訂上限，同樣需要各方信得過、量得出來的單位，而照他的說法，連 token 都算不上好單位。</p>
+<h2 id="sec-10">讀這場訪談要記得的限制</h2>
+<ul><li>這是單一視角。訪談裡的晶片、dots、數學成果、迭代式部署都是 OpenAI 自家的事，他也幾次說「我有偏見」。本文只能對照公開紀錄，無法裁判成果的價值。</li><li>主持人柯里森是 Stripe 總裁，依維基百科（二手）也是共同創辦人；節目中段有 Stripe Atlas 的業配。</li><li>表中標「單一來源」的幾件事，以及正文標為自述的軼事，都只有奧特曼或柯里森自己的說法。</li><li>沙箱悲觀論、讓模型互相背叛、攻防動態均衡、網頁表單都是虛工、Stripe 1%，都是主持人說的。YouTube 字幕把好幾輪對話連在一起，單看字幕容易歸錯人。</li><li>Navier–Stokes 的評估、722 份手稿的審查、PHP 事件的後續，到訪談上架時都還在進行中。</li></ul>
+<h2 id="sec-11">重點結論與實際啟示</h2>
+<p>奧特曼的理由可以拆成兩層。技術那層比較扎實：沙箱與監控對遠超人類的模型都有上限，最後要靠一個還無法驗證的對齊。價值那層他自己標了出來：很多個略超人的 AI 互相制衡，更像他想要的社會。前一層說明單一超級智慧為什麼危險，後一層還沒說明很多個 AI 為什麼比較安全。</p>
+<p>讀完這場訪談，可以帶走幾件事：</p>
+<ul><li><strong>單一模型的上限，目前只是一句帶保留的話。</strong>看到「OpenAI 執行長主張限制 AI」這類標題，回去看原句的「我有點認為」「至少有一陣子」。</li><li>對 agent 團隊的安全論點，問三個問題：這些代理彼此夠不夠獨立？由誰擁有與部署？團隊加總之後要不要也有上限？</li><li>在提示詞裡寫「預算 1 萬美元」，跟在帳單上設 1 萬美元上限是兩回事。企業要管 AI 成本，得做在後者。</li></ul>
+<p>放到台灣的情境（以下是本文的類推，不是訪談內容）：</p>
+<ul><li>企業的 AI 支出多半掛在 IT 或專案預算底下，內控要求事前核定。每位工程師的 token 額度一旦成真，誰核准超支會比模型選型更早卡住。</li><li>中小企業跟上最會用 AI 的人，卡住的常是資料沒整理、沒有人能觀察與除錯 agent。</li><li>晶片設計到投片是奧特曼點名適合 AI 的環節，矽產能有限是他說的共同利益。台灣的 IC 設計與晶圓代工會直接感受到這兩句話，但他沒有點名任何公司。</li><li>「一兆個 AI」如果多數跑在少數海外雲端，對台灣的企業與政府，實際的問題是供應商依賴與資料存放地。</li></ul>
+<p>一兆個略超人的 AI 和一個一兆 IQ 的 AI，哪個比較安全，訪談給的是一個直覺。要讓這個直覺變成可以檢驗的主張，第一個要回答的也許是：那一兆個 AI，最後聽誰的？</p>
+<h2 id="sec-12">製作說明：這篇導讀由 AI 模型完成</h2>
+<ul><li>分析與撰稿由 AI 模型完成，不是人類分析，也沒有經過人工逐句校稿。主控與字幕逐章修訂為 Claude Sonnet 5.5；字幕初譯由 Gemini 3.8 Flash（經 agy）完成；譯文統一審查、正文撰寫、獨立審稿由 Claude Opus 完成，最後再由一位 Opus 依總編輯準則潤稿並標示重點；重要說法的查證使用 Claude、OpenAI Codex 與 Gemini（經 agy）三路。封面插畫由 OpenAI Codex 的 image generation 製作，圖內沒有文字。</li><li>查證原則：重要說法須有兩方以上的查證，並對到官方或第一手來源；只有單方者降級標示。</li><li>引言依據 YouTube 的英文字幕翻成中文，經 AI 審校，是機器翻譯，不是官方譯文，也沒有逐句對照原音；說話者歸屬依節目官方逐字稿（Substack）逐輪核對。個別字句以影片與官方逐字稿為準。OpenAI 頁面引述採其繁體中文版。</li><li>本導讀另附<a href="translation-zh.html">全文繁中譯文</a>與<a href="player.html">雙語同步播放器</a>，都是機器翻譯，非官方版本；影片與逐字稿版權屬原節目。</li><li>本導讀的插圖只有封面一張，是 AI 生成的概念插畫；三道防線的流程圖是本文歸納。</li></ul>
+<h2 id="sec-13">來源清單</h2>
+<p><strong>節目</strong></p>
+<ul class="sources"><li><a href="https://www.youtube.com/watch?v=iMsUcCYNKqY" target="_blank" rel="noopener noreferrer">Why Sam Altman is against a single superintelligence</a>，Cheeky Pint（YouTube），2026-10-29。</li><li><a href="https://cheekypint.substack.com/p/why-sam-altman-is-against-a-single" target="_blank" rel="noopener noreferrer">Why Sam Altman is against a single superintelligence（官方逐字稿）</a>，Cheeky Pint（Substack），2026-10-29。</li></ul>
+<p><strong>OpenAI 官方</strong></p>
+<ul class="sources"><li><a href="https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/" target="_blank" rel="noopener noreferrer">Coordinated disclosure of critical vulnerabilities</a>，OpenAI，2026-10-21。</li><li><a href="https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/" target="_blank" rel="noopener noreferrer">Expanding Daybreak as the cyber defense window narrows</a>，OpenAI，2026-08-10。</li><li><a href="https://openai.com/index/navier-stokes-solution/" target="_blank" rel="noopener noreferrer">Navier–Stokes solution</a>，OpenAI，2026-09-08。</li><li><a href="https://openai.com/index/sharing-ai-progress-in-mathematics/" target="_blank" rel="noopener noreferrer">Sharing AI progress in mathematics</a>，OpenAI，2026-10-06。</li><li><a href="https://github.com/openai/math" target="_blank" rel="noopener noreferrer">openai/math</a> 與<a href="https://github.com/openai/math/blob/main/history.md" target="_blank" rel="noopener noreferrer">修訂紀錄 history.md</a>，OpenAI 官方儲存庫，2026-10-06 起。</li><li><a href="https://openai.com/index/introducing-dots/" target="_blank" rel="noopener noreferrer">Introducing dots</a>，OpenAI，2026-09-29。</li><li><a href="https://openai.com/safety/how-we-think-about-safety-alignment/" target="_blank" rel="noopener noreferrer">How we think about safety and alignment</a>，OpenAI，頁面未標日期。</li><li><a href="https://openai.com/index/planning-for-agi-and-beyond/" target="_blank" rel="noopener noreferrer">Planning for AGI and beyond</a>，OpenAI，2023-02-24。</li></ul>
+<p><strong>PHP 安全事件</strong></p>
+<ul class="sources"><li><a href="https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/" target="_blank" rel="noopener noreferrer">Today&#x27;s PHP security release and how we&#x27;re strengthening PHP security</a>，PHP Foundation，2026-10-21。</li><li><a href="https://www.php.net/archive/2026.php#2026-10-21-5" target="_blank" rel="noopener noreferrer">PHP 2026-10-21 安全更新公告</a>，php.net，2026-10-21。</li></ul>
+<p><strong>數學</strong></p>
+<ul class="sources"><li><a href="https://www.claymath.org/news/navier-stokes-announcement/" target="_blank" rel="noopener noreferrer">Navier–Stokes announcement</a>，Clay Mathematics Institute，2026-09-11。</li><li><a href="https://www.quantamagazine.org/ai-has-solved-one-of-maths-1-million-millennium-prize-problems-20260908/" target="_blank" rel="noopener noreferrer">AI has solved one of math&#x27;s $1 million Millennium Prize problems</a>，Quanta Magazine，2026-09-08，二手。</li><li><a href="https://arxiv.org/abs/2610.08144" target="_blank" rel="noopener noreferrer">arXiv:2610.08144</a>，Bastounis、Circelli、Hansen，2026-10-06，預印本，未經同儕審查。</li><li><a href="https://www.kcl.ac.uk/news/openais-navier-stokes-proof-called-into-question" target="_blank" rel="noopener noreferrer">OpenAI&#x27;s Navier–Stokes proof called into question</a>，King&#x27;s College London，2026-10-27。</li><li><a href="https://www.ahmath.org/statements" target="_blank" rel="noopener noreferrer">AHM statements</a>，Association for Human Mathematics，2026-10-07。</li><li><a href="https://terrytao.wordpress.com/2026/10/07/ahm-statement-on-openais-october-6-release-of-mathematical-documents/" target="_blank" rel="noopener noreferrer">AHM statement on OpenAI&#x27;s October 6 release of mathematical documents（轉載）</a>，Terence Tao 部落格，2026-10-07，署名 AHM。</li><li><a href="https://www.nature.com/articles/d41586-026-03196-8" target="_blank" rel="noopener noreferrer">Nature 新聞：OpenAI 一次釋出 700 多份 AI 數學預印本</a>，Nature，2026-10-07，二手。</li><li><a href="https://retractionwatch.com/2026/10/08/openai-withdraws-preprints-722-manuscripts-unsolved-math-problems/" target="_blank" rel="noopener noreferrer">OpenAI withdraws preprints from trove of 722 manuscripts on unsolved math problems</a>，Retraction Watch，2026-10-08，二手。</li></ul>
+<p><strong>產品、晶片與供應鏈</strong></p>
+<ul class="sources"><li><a href="https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/" target="_blank" rel="noopener noreferrer">OpenAI unveils its first custom chip built by Broadcom</a>，TechCrunch，2026-06-24，二手。</li><li><a href="https://engadget.com/2272230/dots-are-openais-new-personal-agents-and-soon-youll-be-able-to-control-several-of-them" target="_blank" rel="noopener noreferrer">Dots are OpenAI&#x27;s new personal agents</a>，Engadget，2026-09-29，二手。</li><li><a href="https://www.ibj.com/articles/meta-launches-personal-ai-agent-muse-emphasizes-safety-and-privacy" target="_blank" rel="noopener noreferrer">Meta launches personal AI agent, Muse, emphasizes safety and privacy</a>，Indianapolis Business Journal（轉載 AP 稿），2026-09-08，二手。</li><li><a href="https://www.sec.gov/Archives/edgar/data/0000723125/000072312526000018/a2026q4ex991-pressrelease.htm" target="_blank" rel="noopener noreferrer">Micron FY2026 第四季財報新聞稿（8-K 附件）</a>，Micron Technology，美國證管會申報文件。</li><li><a href="https://fourweekmba.com/ai-huang-says-nvidia-now-sells-over-40b-of-gear-per-gigawatt/" target="_blank" rel="noopener noreferrer">Huang says Nvidia now sells over $40B of gear per gigawatt</a>，FourWeekMBA，二手。</li><li><a href="https://247wallst.com/cards/huang-is-putting-a-price-tag-on-the-buildout-50-billion-to-nvda-podcast-episode-01m2krcfs9nb6p8tknnyhph29r" target="_blank" rel="noopener noreferrer">Huang is putting a price tag on the buildout</a>，24/7 Wall St.，二手。</li></ul>
+</article></main>
+<footer>
+<p>本頁為對 YouTube 影片〈Why Sam Altman is against a single superintelligence〉的非官方導讀，原影片版權屬原頻道 Cheeky Pint。本導讀的研究、翻譯、寫作、查證、審稿與插圖皆由 AI 模型完成，並非人類分析，未經人工逐句校稿（分工見文末〈製作說明〉）。內容資料截至 2026-10-29。</p>
+<p>另見：<a href="translation-zh.html">全文繁中譯文</a>、<a href="player.html">雙語同步播放器</a>。</p>
+</footer>
+</div>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="圖片放大檢視"><button type="button" aria-label="關閉放大檢視">關閉（Esc）</button><img src="" alt=""></div>
+<script>
+(function(){
+  var box=document.getElementById('lightbox'), big=box.querySelector('img'), btn=box.querySelector('button'), last=null;
+  function open(img){last=img;big.src=img.currentSrc||img.src;big.alt=img.alt;box.classList.add('is-open');btn.focus();}
+  function close(){box.classList.remove('is-open');big.removeAttribute('src');if(last){last.focus();}}
+  document.querySelectorAll('figure img').forEach(function(img){
+    img.addEventListener('click',function(){open(img);});
+    img.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(img);}});
+  });
+  box.addEventListener('click',function(e){if(e.target===box||e.target===btn){close();}});
+  document.addEventListener('keydown',function(e){
+    if(!box.classList.contains('is-open'))return;
+    if(e.key==='Escape'){close();}
+    if(e.key==='Tab'){e.preventDefault();btn.focus();}
+  });
+})();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js" integrity="sha384-WmdflGW9aGfoBdHc4rRyWzYuAjEmDwMdGdiPNacbwfGKxBW/SO6guzuQ76qjnSlr" crossorigin="anonymous" onerror="void 0"></script>
+<script>
+(function(){
+  if(typeof mermaid==='undefined')return;
+  try{
+    var dark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;
+    mermaid.initialize({startOnLoad:false,securityLevel:'strict',theme:dark?'dark':'default',flowchart:{useMaxWidth:false,htmlLabels:true}});
+    var p=mermaid.run({querySelector:'pre.mermaid'});
+    if(p&&p.catch){p.catch(function(){});}
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
