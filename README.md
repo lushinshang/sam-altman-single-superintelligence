@@ -3,7 +3,7 @@
 Cheeky Pint 訪談〈Why Sam Altman is against a single superintelligence〉（2026-10-29，52:45）的深度導讀。主軸是 OpenAI 執行長 Sam Altman 說「寧可有一兆個略超人的 AI，也不要一個一兆 IQ 的 AI」，以及他在同一場訪談裡認為至少有一陣子得同意替單一模型設上限、卻也說過放手讓算力失控一週；沙箱、算力、數學成果、晶片與 token 計價等說法，逐項對照官方與一手資料。
 
 ## 製作聲明
-本導讀的分析與撰稿由 AI 模型完成，不是人類分析，也沒有經過人工逐句校稿。主控與字幕逐章修訂為 Claude Sonnet 5.5；字幕初譯由 Gemini 3.8 Flash（經 agy）完成；譯文統一審查、正文撰寫、獨立審稿由 Claude Opus 完成，最後再由一位 Opus 依總編輯準則潤稿並標示重點；重要說法的查證使用 Claude、OpenAI Codex 與 Gemini（經 agy）三路，須有兩方以上查證並對到官方或第一手來源，只有單方者降級標示。封面插畫由 OpenAI Codex 的 image generation 製作，圖內無文字。依據的是 YouTube 的英文字幕，沒有逐句對照原音；說話者歸屬依節目官方逐字稿核對。字幕譯文是機器翻譯，非官方版本。
+本導讀的分析與撰稿由 AI 模型完成，不是人類分析，也沒有經過人工逐句校稿。主控與字幕逐章修訂為 Claude Sonnet 5.5；字幕初譯由 Gemini 3.8 Flash（經 agy）完成；譯文統一審查、正文撰寫、獨立審稿由 Claude Opus 完成，最後再由 Opus 依總編輯準則潤稿兩輪，並標示重點與注意之處；重要說法的查證使用 Claude、OpenAI Codex 與 Gemini（經 agy）三路，須有兩方以上查證並對到官方或第一手來源，只有單方者降級標示。封面插畫由 OpenAI Codex 的 image generation 製作，圖內無文字。依據的是 YouTube 的英文字幕，沒有逐句對照原音；說話者歸屬依節目官方逐字稿核對。字幕譯文是機器翻譯，非官方版本。
 
 ## 檔案
 - `sam-altman-single-superintelligence.md`：導讀主文（Markdown）
